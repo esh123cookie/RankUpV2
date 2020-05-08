@@ -10,3 +10,6 @@ commands:
      permission: rankup.use
      description: rankup command
      aliases: [ru]
+  ruabout:
+     default: op
+     description: about rankup
