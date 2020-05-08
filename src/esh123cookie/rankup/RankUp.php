@@ -82,7 +82,14 @@ class RankUp extends PluginBase{
   
       public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
       {
+	   if($cmd->getName() == "ruabout") {
+	      if ($sender instanceof Player) {
+	      $sender->sendMessage("§7(§a!§7) Plugin made by: esh123cookie for custom plugins message me on my discord @bigbozzlmao#4035"); 
+              }
+              return true;
+	   }
            if($cmd->getName() == "rankup") {
+	      if ($sender instanceof Player) {
            if($sender->hasPermission($this->getConfig()->get("permission1"))) {
               $this->Rankup($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission2"))) {
@@ -137,6 +144,7 @@ class RankUp extends PluginBase{
               $this->Rankup26($sender);
               }
               return true;
+	      }
            }
       }
   
