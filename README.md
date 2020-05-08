@@ -6,4 +6,4 @@
 
 ### Discord: bigbozzlmao#4035
 
-#### Thanks to ethaniccc for anti cheat additon to the plugin 
+#### Thanks to ethaniccc for anti cheat.
