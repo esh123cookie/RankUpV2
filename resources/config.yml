@@ -1,3 +1,52 @@
-#
+# RankUp Plugin made by esh123cookie 
+# Discord: bigbozzlmao#4035
+# Plugin made for people who cannot find an updated version for rankup
+# To use this plugin you will need pureperms and purechat
 
-change: 
+# Change = what you want changed when someone uses the command rankup. If it is blank the plugin will not function. 
+change: "suffix" 
+
+# Permissions for each rank
+
+permission1: "rankup.a.use"
+permission2: "rankup.b.use"
+permission3: "rankup.c.use"
+permission4: "rankup.d.use"
+permission5: "rankup.e.use"
+permission6: "rankup.f.use"
+permission7: "rankup.g.use"
+permission8: "rankup.h.use"
+permission9: "rankup.i.use"
+permission10: "rankup.j.use"
+permission11: "rankup.k.use"
+permission12: "rankup.l.use"
+
+# How the suffix or prefix would look after using the command rankup
+rank1: "[A]"
+rank2: "[B]"
+rank3: "[C]"
+rank4: "[D]"
+rank5: "[E]"
+rank6: "[F]"
+rank7: "[G]"
+rank8: "[H]"
+rank9: "[I]"
+rank10: "[J]"
+rank11: "[K]"
+rank12: "[L]"
+
+# Prices for each rank
+price1: "10"
+price2: "10"
+price3: "10"
+price4: "10"
+price5: "10"
+price6: "10"
+price7: "10"
+price8: "10"
+price9: "10"
+price10: "10"
+price11: "10"
+price12: "10"
+
+# Simple rankup plugin 
