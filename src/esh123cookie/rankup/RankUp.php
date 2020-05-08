@@ -163,7 +163,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg1"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -182,7 +182,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd2);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg2"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -201,7 +201,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd3);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg3"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -220,7 +220,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd4);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg4"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -239,7 +239,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd5);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg5"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
 
@@ -258,7 +258,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd6);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg6"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -277,7 +277,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd7);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg7"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
 
@@ -296,7 +296,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd8);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg8"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -315,7 +315,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd9);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg9"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
 
@@ -334,7 +334,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd10);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg10"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
 
@@ -344,16 +344,16 @@ class RankUp extends PluginBase{
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $change = $this->getConfig()->get("change");
                  if($change == ("suffix")){
-                 $suffix = $pureChat->getSuffix($this->getConfig()->get("rank12"));
+                 $suffix = $pureChat->getSuffix($this->getConfig()->get("rank11"));
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $pureChat->getPrefix($this->getConfig()->get("rank12"));
+                 $prefix = $pureChat->getPrefix($this->getConfig()->get("rank11"));
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd11");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd11);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg12"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -372,7 +372,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd12);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg12"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -391,7 +391,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd13);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg13"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -410,7 +410,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd14);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg14"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -429,7 +429,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd15);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg15"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -448,7 +448,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd16);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg16"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
 
@@ -467,7 +467,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd17);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg17"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -486,7 +486,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd18);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg18"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
 
@@ -505,7 +505,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd19);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg19"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -524,7 +524,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd20);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg20"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -543,7 +543,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd21);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg21"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -562,7 +562,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd22);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg22"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -581,7 +581,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd23);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg23"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -600,7 +600,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd24);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg24"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -619,7 +619,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd25);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg25"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
   
@@ -638,7 +638,7 @@ class RankUp extends PluginBase{
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd26);
                  }
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("msg26"));
+                 $sender->sendMessage($this->getConfig()->get("msg"));
               }
       }
 	
