@@ -77,6 +77,7 @@ class RankUp extends PluginBase{
         $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
         if(getConfig->get("change") !== null) {
            $this->getLogger()->info("§cRankup is unable to change suffix or prefix. Issue is in config.");
+		
         }
       }
   
@@ -90,6 +91,8 @@ class RankUp extends PluginBase{
 	   }
            if($cmd->getName() == "rankup") {
 	      if ($sender instanceof Player) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
            if($sender->hasPermission($this->getConfig()->get("permission1"))) {
               $this->Rankup($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission2"))) {
@@ -145,7 +148,7 @@ class RankUp extends PluginBase{
               }
               return true;
 	      }
-           }
+	   }
       }
   
       public function Rankup($sender) {
