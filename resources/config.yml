@@ -10,11 +10,15 @@ change: "suffix"
 msg: "you do not have enough money to rankup"
 
 # In Order
-# rank = How the suffix or prefix would look after using the command rankup
-# price = Prices for each rank
-# cmd = Command
-# permission = Permissions for each rank
-# tags {name}
+## rank = How the suffix or prefix would look after using the command rankup
+## price = Prices for each rank
+## cmd = Command
+## permission = Permissions for each rank
+
+# Use only for commands:
+## tags $p, $money
+## $p = player name
+## $money = player money
 
 rank1: "[A]"
 price1: "10"
