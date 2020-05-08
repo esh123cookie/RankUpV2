@@ -6,47 +6,145 @@
 # Change = what you want changed when someone uses the command rankup. If it is blank the plugin will not function. 
 change: "suffix" 
 
-# Permissions for each rank
+# not enough money message
+msg: "you do not have enough money to rankup"
 
+# In Order
+# rank = How the suffix or prefix would look after using the command rankup
+# price = Prices for each rank
+# cmd = Command
+# permission = Permissions for each rank
+# tags {name}
+
+rank1: "[A]"
+price1: "10"
+cmd: " "
 permission1: "rankup.a.use"
+
+rank2: "[B]"
+price2: "10"
+cmd2: " "
 permission2: "rankup.b.use"
-permission3: "rankup.c.use"
+
+rank3: "[C]"
+price3: "10"
+cmd3: " "
+permission1: "rankup.c.use"
+
+rank4: "[D]"
+price4: "10"
+cmd4: " "
 permission4: "rankup.d.use"
+
+rank5: "[E]"
+price5: "10"
+cmd5: " "
 permission5: "rankup.e.use"
+
+rank6: "[F]"
+price6: "10"
+cmd6: " "
 permission6: "rankup.f.use"
+
+rank7: "[G]"
+price7: "10"
+cmd7: " "
 permission7: "rankup.g.use"
+
+rank8: "[H]"
+price8: "10"
+cmd8: " "
 permission8: "rankup.h.use"
+
+rank9: "[I]"
+price9: "10"
+cmd9: " "
 permission9: "rankup.i.use"
+
+rank10: "[J]"
+price10: "10"
+cmd10: " "
 permission10: "rankup.j.use"
+
+rank11: "[K]"
+price11: "10"
+cmd11: " "
 permission11: "rankup.k.use"
+
+rank12: "[L]"
+price12: "10"
+cmd12: " "
 permission12: "rankup.l.use"
 
-# How the suffix or prefix would look after using the command rankup
-rank1: "[A]"
-rank2: "[B]"
-rank3: "[C]"
-rank4: "[D]"
-rank5: "[E]"
-rank6: "[F]"
-rank7: "[G]"
-rank8: "[H]"
-rank9: "[I]"
-rank10: "[J]"
-rank11: "[K]"
-rank12: "[L]"
+rank13: "[M]"
+price13: "10"
+cmd13: " "
+permission13: "rankup.m.use"
 
-# Prices for each rank
-price1: "10"
-price2: "10"
-price3: "10"
-price4: "10"
-price5: "10"
-price6: "10"
-price7: "10"
-price8: "10"
-price9: "10"
-price10: "10"
-price11: "10"
-price12: "10"
+rank14: "[N]"
+price14: "10"
+cmd14: " "
+permission14: "rankup.a.use"
 
+rank15: "[O]"
+price15: "10"
+cmd15: " "
+permission15: "rankup.o.use"
+
+rank16: "[P]"
+price16: "10"
+cmd16: " "
+permission16: "rankup.p.use"
+
+rank17: "[Q]"
+price17: "10"
+cmd17: " "
+permission17: "rankup.q.use"
+
+rank18: "[R]"
+price18: "10"
+cmd18: " "
+permission18: "rankup.r.use"
+
+rank19: "[S]"
+price19: "10"
+cmd: " "
+permission19: "rankup.s.use"
+
+rank20: "[T]"
+price20: "10"
+cmd20: " "
+permission20: "rankup.t.use"
+
+rank21: "[U]"
+price21: "10"
+cmd21: " "
+permission21: "rankup.u.use"
+
+rank22: "[V]"
+price22: "10"
+cmd22: " "
+permission22: "rankup.v.use"
+
+rank23: "[W]"
+price23: "10"
+cmd23: " "
+permission23: "rankup.w.use"
+
+rank24: "[X]"
+price24: "10"
+cmd24: " "
+permission24: "rankup.x.use"
+
+rank25: "[Y]"
+price25: "10"
+cmd25: " "
+permission25: "rankup.y.use"
+
+rank26: "[Z]"
+price26: "10"
+cmd26: " "
+permission26: "rankup.z.use"
+
+# version 1.0.0
 # Simple rankup plugin 
