@@ -75,10 +75,6 @@ class RankUp extends PluginBase{
   
       public function onEnable(){
         $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
-        if(getConfig->get("change") !== null) {
-           $this->getLogger()->info("§cRankup is unable to change suffix or prefix. Issue is in config.");
-		
-        }
       }
   
       public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
