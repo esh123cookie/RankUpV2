@@ -91,8 +91,6 @@ class RankUp extends PluginBase{
 	   }
            if($cmd->getName() == "rankup") {
 	      if ($sender instanceof Player) {
-	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
            if($sender->hasPermission($this->getConfig()->get("permission1"))) {
               $this->Rankup($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission2"))) {
@@ -152,6 +150,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price1");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -171,6 +171,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup2($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price2");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -190,6 +192,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup3($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price3");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -209,6 +213,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup4($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price4");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -228,6 +234,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup5($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price5");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -247,6 +255,8 @@ class RankUp extends PluginBase{
       }
 
       public function Ranku6($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price6");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -266,6 +276,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup7($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price7");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -285,6 +297,8 @@ class RankUp extends PluginBase{
       }
 
       public function Rankup8($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price8");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -304,6 +318,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup9($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price9");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -323,6 +339,8 @@ class RankUp extends PluginBase{
       }
 
       public function Rankup10($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price10");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -342,6 +360,8 @@ class RankUp extends PluginBase{
       }
 
       public function Rankup11($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price11");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -361,6 +381,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup12($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price12");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -380,6 +402,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup13($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price13");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -399,6 +423,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup14($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price14");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -418,6 +444,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup15($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price15");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -437,6 +465,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup16($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price16");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -456,6 +486,8 @@ class RankUp extends PluginBase{
       }
 
       public function Rankup17($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price17");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -475,6 +507,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup18($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price18");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -494,6 +528,8 @@ class RankUp extends PluginBase{
       }
 
       public function Rankup19($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price19");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -513,6 +549,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup20($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price20");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -532,6 +570,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup21($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price21");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -551,6 +591,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup22($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price22");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -570,6 +612,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup23($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price23");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -589,6 +633,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup24($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price24");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -608,6 +654,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup25($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price25");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
@@ -627,6 +675,8 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup26($sender) {
+	      $p = $sender->getName();
+	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price26");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
