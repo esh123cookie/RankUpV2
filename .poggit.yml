@@ -1,0 +1,10 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/esh123cookie/RankUp
+build-by-default: true
+branches:
+- master
+projects:
+  RankUp:
+    path: ""
+    lint:
+      phpstan: false
+...
