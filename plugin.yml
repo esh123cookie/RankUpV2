@@ -1,0 +1,12 @@
+name: RankUp
+version: 1.0.0
+api: [3.0.0, 3.9.3, 4.0.0]
+main: esh123cookie\rankup\RankUp
+author: esh123cookie
+depend: [PurePerms, PureChat]
+commands:
+  rankup:
+     default: op
+     permission: rankup.use
+     description: rankup command
+     aliases: [ru]
