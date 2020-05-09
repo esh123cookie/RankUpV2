@@ -366,7 +366,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank11");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank11"));
+                 $prefix = $this->getConfig()->get("rank11");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd11");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd11);
@@ -387,7 +387,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank12");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank12"));
+                 $prefix = $this->getConfig()->get("rank12");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd12");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd12);
@@ -408,7 +408,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank13");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank13"));
+                 $prefix = $this->getConfig()->get("rank13");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd13");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd13);
@@ -429,7 +429,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank14");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank14"));
+                 $prefix = $this->getConfig()->get("rank14");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd14");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd14);
@@ -450,7 +450,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank15");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank15"));
+                 $prefix = $this->getConfig()->get("rank15");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd15");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd15);
@@ -471,7 +471,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank16");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank16"));
+                 $prefix = $this->getConfig()->get("rank16");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd16");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd16);
@@ -492,7 +492,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank17");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank17"));
+                 $prefix = $this->getConfig()->get("rank17");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd17");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd17);
@@ -513,7 +513,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank18");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank18"));
+                 $prefix = $this->getConfig()->get("rank18");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd18");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd18);
@@ -534,7 +534,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank19");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank19"));
+                 $prefix = $this->getConfig()->get("rank19");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd19");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd19);
@@ -555,7 +555,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank20");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank20"));
+                 $prefix = $this->getConfig()->get("rank20");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd20");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd20);
@@ -576,7 +576,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank21");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank21"));
+                 $prefix = $this->getConfig()->get("rank21");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd21");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd21);
@@ -597,7 +597,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank22");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank22"));
+                 $prefix = $this->getConfig()->get("rank22");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd22");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd22);
@@ -618,7 +618,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank23");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank23"));
+                 $prefix = $this->getConfig()->get("rank23");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd23");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd23);
@@ -639,7 +639,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank24");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank24"));
+                 $prefix = $this->getConfig()->get("rank24");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd24");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd24);
@@ -660,7 +660,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank25");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank25"));
+                 $prefix = $this->getConfig()->get("rank25");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd25");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd25);
@@ -681,7 +681,7 @@ class RankUp extends PluginBase{
                  $suffix = $this->getConfig()->get("rank26");
 	               $pureChat->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-                 $prefix = $this->getConfig()->get("rank26"));
+                 $prefix = $this->getConfig()->get("rank26");
 	               $pureChat->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd26");
 		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd26);
