@@ -146,9 +146,10 @@ class RankUp extends PluginBase{
       }
   
       public function Rankup($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
-		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
+	      $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price1");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $change = $this->getConfig()->get("change");
@@ -163,10 +164,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		 }
               }
       }
   
       public function Rankup2($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -184,10 +187,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup3($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -205,10 +210,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup4($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -226,10 +233,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup5($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -247,10 +256,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
 
       public function Ranku6($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -268,10 +279,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup7($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -289,10 +302,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
 
       public function Rankup8($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -310,10 +325,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup9($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -331,10 +348,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
 
       public function Rankup10($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -352,10 +371,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
 
       public function Rankup11($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -373,10 +394,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup12($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -394,10 +417,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup13($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -415,10 +440,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup14($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -436,10 +463,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup15($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -457,10 +486,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup16($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -478,10 +509,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
 
       public function Rankup17($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -499,10 +532,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup18($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -520,10 +555,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
 
       public function Rankup19($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -541,10 +578,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup20($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -562,10 +601,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup21($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -583,10 +624,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup22($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -604,10 +647,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup23($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -625,10 +670,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup24($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -646,10 +693,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup25($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -667,10 +716,12 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
   
       public function Rankup26($sender) {
+	      if ($sender instanceof Player) {
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
@@ -688,6 +739,7 @@ class RankUp extends PluginBase{
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
+		}
               }
       }
 	
