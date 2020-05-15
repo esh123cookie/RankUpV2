@@ -2,8 +2,6 @@
 
 namespace esh123cookie\rankup;
 
-// AntiSteal message by ethaniccc
-
 /*
  *
  * RankUp, a plugin for PocketMine-MP
@@ -147,24 +145,22 @@ class RankUp extends PluginBase{
   
       public function Rankup($sender) {
             if(!$sender instanceof Player) return true;
-            	$prefix = "";
-                $setprefix = $this->getConfig()->get("rank1");
-                $prefix .= $setprefix;
-            	$suffix = "";
-                $setsuffix = $this->getConfig()->get("rank1");
-                $suffix .= $setsuffix;
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
-	      $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
+	      $this->purePerms = $purePerms = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
               $amount = $this->getConfig()->get("price1");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $change = $this->getConfig()->get("change");
                  if($change == ("suffix")){
-	         $pureChat->setSuffix($sender, $suffix);
+		 $this->getSuffix($player);
+                 $setsuffix = $this->getConfig()->get("rank1");
+	         $purePerms->setSuffix($sender, $suffix);
                  }elseif($change == ("prefix")){
-	         $pureChat->setPrefix($sender, $prefix);
+		 $this->getPrefix($player);
+                 $setprefix = $this->getConfig()->get("rank1");
+	         $purePerms->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd");
-		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd);
+		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd);
                  }
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
