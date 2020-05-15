@@ -147,21 +147,12 @@ class RankUp extends PluginBase{
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
-	      $this->purePerms = $purePerms = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
               $amount = $this->getConfig()->get("price1");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $change = $this->getConfig()->get("change");
-                 if($change == ("suffix")){
-		 $this->getSuffix($player);
-                 $setsuffix = $this->getConfig()->get("rank1");
-	         $purePerms->setSuffix($sender, $suffix);
-                 }elseif($change == ("prefix")){
-		 $this->getPrefix($player);
-                 $setprefix = $this->getConfig()->get("rank1");
-	         $purePerms->setPrefix($sender, $prefix);
                  $cmd = $this->getConfig()->get("cmd");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd);
-                 }
+                 $cmd = $this->getConfig()->get("cmd2");
+		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd2);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
@@ -180,95 +171,58 @@ class RankUp extends PluginBase{
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price2");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $change = $this->getConfig()->get("change");
-                 if($change == ("suffix")){
-	            $pureChat->setSuffix($sender, $suffix);
-                 }elseif($change == ("prefix")){
-	            $pureChat->setPrefix($sender, $prefix);
-                 $cmd = $this->getConfig()->get("cmd2");
-		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd2);
-                 }
+                 $cmd = $this->getConfig()->get("cmd3");
+		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd3);
+                 $cmd = $this->getConfig()->get("cmd4");
+		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd4);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
-              }
+		}
       }
   
       public function Rankup3($sender) {
             if(!$sender instanceof Player) return true;
-            	$prefix = "";
-                $setprefix = $this->getConfig()->get("rank3");
-                $prefix .= $setprefix;
-            	$suffix = "";
-                $setsuffix = $this->getConfig()->get("rank3");
-                $suffix .= $setsuffix;
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
-		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price3");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $change = $this->getConfig()->get("change");
-                 if($change == ("suffix")){
-	         $pureChat->setSuffix($sender, $suffix);
-                 }elseif($change == ("prefix")){
-	         $pureChat->setPrefix($sender, $prefix);
-                 $cmd = $this->getConfig()->get("cmd3");
-		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd3);
-                 }
+                 $cmd = $this->getConfig()->get("cmd5");
+		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd5);
+                 $cmd = $this->getConfig()->get("cmd6");
+		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd6);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
-              }
+		}
       }
   
       public function Rankup4($sender) {
             if(!$sender instanceof Player) return true;
-            	$prefix = "";
-                $setprefix = $this->getConfig()->get("rank4");
-                $prefix .= $setprefix;
-            	$suffix = "";
-                $setsuffix = $this->getConfig()->get("rank4");
-                $suffix .= $setsuffix;
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
-		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price4");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $change = $this->getConfig()->get("change");
-                 if($change == ("suffix")){
-	               $pureChat->setSuffix($sender, $suffix);
-                 }elseif($change == ("prefix")){
-	               $pureChat->setPrefix($sender, $prefix);
-                 $cmd = $this->getConfig()->get("cmd4");
-		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd4);
-                 }
+                 $cmd = $this->getConfig()->get("cmd");
+		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd7);
+                 $cmd = $this->getConfig()->get("cmd2");
+		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd8);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
-              }
+		}
       }
   
       public function Rankup5($sender) {
             if(!$sender instanceof Player) return true;
-            	$prefix = "";
-                $setprefix = $this->getConfig()->get("rank5");
-                $prefix .= $setprefix;
-            	$suffix = "";
-                $setsuffix = $this->getConfig()->get("rank5");
-                $suffix .= $setsuffix;
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
-		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price5");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $change = $this->getConfig()->get("change");
-                 if($change == ("suffix")){
-	               $pureChat->setSuffix($sender, $suffix);
-                 }elseif($change == ("prefix")){
-	               $pureChat->setPrefix($sender, $prefix);
-                 $cmd = $this->getConfig()->get("cmd5");
-		             $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd5);
-                 }
+                 $cmd = $this->getConfig()->get("cmd");
+		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd9);
+                 $cmd = $this->getConfig()->get("cmd2");
+		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd10);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
-              }
+		}
       }
 
       public function Ranku6($sender) {
