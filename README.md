@@ -12,3 +12,5 @@
 ##### https://discord.gg/RpePmxY
 ##### It means a lot if you do not change anything on the plugin.yml part of this plugin 
 ##### The plugin is new so if there are errors just dm me
+
+###### Check
