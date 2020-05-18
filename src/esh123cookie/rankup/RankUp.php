@@ -275,6 +275,7 @@ class RankUp extends PluginBase{
 	      $p = $sender->getName();
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price9");
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd = $this->getConfig()->get("cmd17");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd17);
                  $cmd = $this->getConfig()->get("cmd18");
