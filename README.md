@@ -13,6 +13,4 @@
 ##### It means a lot if you do not change anything on the plugin.yml part of this plugin 
 ##### The plugin is new so if there are errors just dm me
 
-###### Check
-
 # plugin not tested yet if there are any crashes let me know on my discord
