@@ -151,7 +151,7 @@ class RankUp extends PluginBase{
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd = $this->getConfig()->get("cmd");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd);
-                 $cmd = $this->getConfig()->get("cmd2");
+                 $cmd2 = $this->getConfig()->get("cmd2");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd2);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -171,9 +171,9 @@ class RankUp extends PluginBase{
 		       $this->pureChat = $pureChat = $this->getServer()->getPluginManager()->getPlugin("PureChat");
               $amount = $this->getConfig()->get("price2");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd3");
+                 $cmd3 = $this->getConfig()->get("cmd3");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd3);
-                 $cmd = $this->getConfig()->get("cmd4");
+                 $cmd4 = $this->getConfig()->get("cmd4");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd4);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -186,9 +186,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price3");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd5");
+                 $cmd5 = $this->getConfig()->get("cmd5");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd5);
-                 $cmd = $this->getConfig()->get("cmd6");
+                 $cmd6 = $this->getConfig()->get("cmd6");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd6);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -201,9 +201,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price4");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd7");
+                 $cmd7 = $this->getConfig()->get("cmd7");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd7);
-                 $cmd = $this->getConfig()->get("cmd8");
+                 $cmd8 = $this->getConfig()->get("cmd8");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd8);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -216,9 +216,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price5");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd9");
+                 $cmd9 = $this->getConfig()->get("cmd9");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd9);
-                 $cmd = $this->getConfig()->get("cmd10");
+                 $cmd10 = $this->getConfig()->get("cmd10");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd10);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -231,9 +231,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price6");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd11");
+                 $cmd11 = $this->getConfig()->get("cmd11");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd11);
-                 $cmd = $this->getConfig()->get("cmd12");
+                 $cmd12 = $this->getConfig()->get("cmd12");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd12);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -246,9 +246,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price7");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd13");
+                 $cmd13 = $this->getConfig()->get("cmd13");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd13);
-                 $cmd = $this->getConfig()->get("cmd14");
+                 $cmd14 = $this->getConfig()->get("cmd14");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd14);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -261,9 +261,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price8");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd15");
+                 $cmd15 = $this->getConfig()->get("cmd15");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd15);
-                 $cmd = $this->getConfig()->get("cmd16");
+                 $cmd16 = $this->getConfig()->get("cmd16");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd16);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -276,9 +276,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price9");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd17");
+                 $cmd17 = $this->getConfig()->get("cmd17");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd17);
-                 $cmd = $this->getConfig()->get("cmd18");
+                 $cmd18 = $this->getConfig()->get("cmd18");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd18);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -291,9 +291,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price10");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd19");
+                 $cmd19 = $this->getConfig()->get("cmd19");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd19);
-                 $cmd = $this->getConfig()->get("cmd20");
+                 $cmd20 = $this->getConfig()->get("cmd20");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd20);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -306,9 +306,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price11");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd21");
+                 $cmd21 = $this->getConfig()->get("cmd21");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd21);
-                 $cmd = $this->getConfig()->get("cmd22");
+                 $cmd22 = $this->getConfig()->get("cmd22");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd22);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -321,9 +321,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price12");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd23");
+                 $cmd23 = $this->getConfig()->get("cmd23");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd23);
-                 $cmd = $this->getConfig()->get("cmd24");
+                 $cmd24 = $this->getConfig()->get("cmd24");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd24);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -336,9 +336,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price13");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd25");
+                 $cmd25 = $this->getConfig()->get("cmd25");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd25);
-                 $cmd = $this->getConfig()->get("cmd26");
+                 $cmd26 = $this->getConfig()->get("cmd26");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd26);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -351,9 +351,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price14");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd27");
+                 $cmd27 = $this->getConfig()->get("cmd27");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd27);
-                 $cmd = $this->getConfig()->get("cmd28");
+                 $cmd28 = $this->getConfig()->get("cmd28");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd28);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -366,9 +366,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price15");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd29");
+                 $cmd29 = $this->getConfig()->get("cmd29");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd29);
-                 $cmd = $this->getConfig()->get("cmd30");
+                 $cmd30 = $this->getConfig()->get("cmd30");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd30);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -381,9 +381,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price16");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd31");
+                 $cmd31 = $this->getConfig()->get("cmd31");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd31);
-                 $cmd = $this->getConfig()->get("cmd32");
+                 $cmd32 = $this->getConfig()->get("cmd32");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd32);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -396,9 +396,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price17");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd33");
+                 $cmd33 = $this->getConfig()->get("cmd33");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd33);
-                 $cmd = $this->getConfig()->get("cmd34");
+                 $cmd34 = $this->getConfig()->get("cmd34");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd34);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -411,9 +411,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price18");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd35");
+                 $cmd35 = $this->getConfig()->get("cmd35");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd35);
-                 $cmd = $this->getConfig()->get("cmd36");
+                 $cmd36 = $this->getConfig()->get("cmd36");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd36);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -441,9 +441,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price20");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd39");
+                 $cmd37 = $this->getConfig()->get("cmd39");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd39);
-                 $cmd = $this->getConfig()->get("cmd40");
+                 $cmd38 = $this->getConfig()->get("cmd40");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd40);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -456,9 +456,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price21");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd41");
+                 $cmd39 = $this->getConfig()->get("cmd41");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd41);
-                 $cmd = $this->getConfig()->get("cmd42");
+                 $cmd40 = $this->getConfig()->get("cmd42");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd42);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -486,9 +486,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price23");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd45");
+                 $cmd41 = $this->getConfig()->get("cmd45");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd45);
-                 $cmd = $this->getConfig()->get("cmd46");
+                 $cmd42 = $this->getConfig()->get("cmd46");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd46);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -501,9 +501,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price24");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd47");
+                 $cmd43 = $this->getConfig()->get("cmd47");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd47);
-                 $cmd = $this->getConfig()->get("cmd48");
+                 $cmd44 = $this->getConfig()->get("cmd48");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd48);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -516,9 +516,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price25");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd49");
+                 $cmd45 = $this->getConfig()->get("cmd49");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd49);
-                 $cmd = $this->getConfig()->get("cmd50");
+                 $cmd46 = $this->getConfig()->get("cmd50");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd50);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
@@ -531,9 +531,9 @@ class RankUp extends PluginBase{
 	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price26");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd51");
+                 $cmd47 = $this->getConfig()->get("cmd51");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd51);
-                 $cmd = $this->getConfig()->get("cmd52");
+                 $cmd48 = $this->getConfig()->get("cmd52");
 		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd52);
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
