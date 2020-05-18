@@ -3,9 +3,6 @@
 # Plugin made for people who cannot find an updated version for rankup
 # To use this plugin you will need pureperms and purechat
 
-# Change = what you want changed when someone uses the command rankup. If it is blank the plugin will not function. 
-change: "suffix" 
-
 # not enough money message
 msg: "you do not have enough money to rankup"
 
@@ -20,134 +17,136 @@ msg: "you do not have enough money to rankup"
 ## $p = player name
 ## $money = player money
 
-rank1: "[A]"
-price1: "10"
-cmd: " "
+# For Cmd put nothing if you want the command to do nothing
+
+# Rank A
+cmd:
+cmd2:
 permission1: "rankup.a.use"
 
-rank2: "[B]"
-price2: "10"
-cmd2: " "
+# Rank B
+cmd3:
+cmd4:
 permission2: "rankup.b.use"
 
-rank3: "[C]"
-price3: "10"
-cmd3: " "
+# Rank C
+cmd5:
+cmd6:
 permission1: "rankup.c.use"
 
-rank4: "[D]"
-price4: "10"
-cmd4: " "
+# Rank D  
+cmd7:
+cmd8:
 permission4: "rankup.d.use"
 
-rank5: "[E]"
-price5: "10"
-cmd5: " "
+# Rank E
+cmd9:
+cmd10:
 permission5: "rankup.e.use"
 
-rank6: "[F]"
-price6: "10"
-cmd6: " "
+# Rank F
+cmd11:
+cmd12:
 permission6: "rankup.f.use"
 
-rank7: "[G]"
-price7: "10"
-cmd7: " "
+# Rank G
+cmd13:
+cmd14:
 permission7: "rankup.g.use"
 
-rank8: "[H]"
-price8: "10"
-cmd8: " "
+# Rank H
+cmd15:
+cmd16:
 permission8: "rankup.h.use"
 
-rank9: "[I]"
-price9: "10"
-cmd9: " "
+# Rank I
+cmd17:
+cmd18:
 permission9: "rankup.i.use"
 
-rank10: "[J]"
-price10: "10"
-cmd10: " "
+# Rank J
+cmd19:
+cmd20:
 permission10: "rankup.j.use"
 
-rank11: "[K]"
-price11: "10"
-cmd11: " "
+# Rank K
+cmd21:
+cmd22:
 permission11: "rankup.k.use"
 
-rank12: "[L]"
-price12: "10"
-cmd12: " "
+# Rank L
+cmd23:
+cmd24:
 permission12: "rankup.l.use"
 
-rank13: "[M]"
-price13: "10"
-cmd13: " "
+# Rank M
+cmd25:
+cmd26:
 permission13: "rankup.m.use"
 
-rank14: "[N]"
-price14: "10"
-cmd14: " "
+# Rank N
+cmd27:
+cmd28:
 permission14: "rankup.a.use"
 
-rank15: "[O]"
-price15: "10"
-cmd15: " "
+# Rank O
+cmd29:
+cmd30:
 permission15: "rankup.o.use"
 
-rank16: "[P]"
-price16: "10"
-cmd16: " "
+# Rank P
+cmd31:
+cmd32:
 permission16: "rankup.p.use"
 
-rank17: "[Q]"
-price17: "10"
-cmd17: " "
+# Rank Q
+cmd33:
+cmd34:
 permission17: "rankup.q.use"
 
-rank18: "[R]"
-price18: "10"
-cmd18: " "
+# Rank R
+cmd35:
+cmd36:
 permission18: "rankup.r.use"
 
-rank19: "[S]"
-price19: "10"
-cmd: " "
+# Rank S
+cmd37:
+cmd38:
 permission19: "rankup.s.use"
 
-rank20: "[T]"
-price20: "10"
-cmd20: " "
+# Rank T
+cmd39:
+cmd40:
 permission20: "rankup.t.use"
 
-rank21: "[U]"
-price21: "10"
-cmd21: " "
+# Rank U
+cmd41:
+cmd42:
 permission21: "rankup.u.use"
 
-rank22: "[V]"
-price22: "10"
-cmd22: " "
+# Rank V
+cmd43:
+cmd44:
 permission22: "rankup.v.use"
 
-rank23: "[W]"
-price23: "10"
-cmd23: " "
+# Rank W
+cmd45:
+cmd46:
 permission23: "rankup.w.use"
 
-rank24: "[X]"
-price24: "10"
-cmd24: " "
+# Rank X
+cmd47:
+cmd48:
 permission24: "rankup.x.use"
 
-rank25: "[Y]"
-price25: "10"
-cmd25: " "
+# Rank Y
+cmd49:
+cmd50:
 permission25: "rankup.y.use"
 
-rank26: "[Z]"
-price26: "10"
-cmd26: " "
+# Rank Z
+cmd51:
+cmd52:
 permission26: "rankup.z.use"
 
 # version 1.0.0
