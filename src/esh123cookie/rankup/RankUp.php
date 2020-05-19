@@ -138,9 +138,9 @@ class RankUp extends PluginBase{
            }elseif($sender->hasPermission($this->getConfig()->get("permission26"))) {
               $this->Rankup26($sender);
               }
-              return true;
 	      }
 	   }
+      return true;
       }
   
       public function Rankup($sender) {
@@ -156,6 +156,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup2($sender) {
@@ -178,6 +179,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup3($sender) {
@@ -193,6 +195,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup4($sender) {
@@ -208,6 +211,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup5($sender) {
@@ -223,6 +227,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
 
       public function Ranku6($sender) {
@@ -238,6 +243,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup7($sender) {
@@ -253,6 +259,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
 
       public function Rankup8($sender) {
@@ -268,6 +275,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup9($sender) {
@@ -283,6 +291,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
 
       public function Rankup10($sender) {
@@ -298,6 +307,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
 
       public function Rankup11($sender) {
@@ -313,6 +323,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup12($sender) {
@@ -328,6 +339,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup13($sender) {
@@ -343,6 +355,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup14($sender) {
@@ -358,6 +371,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup15($sender) {
@@ -373,6 +387,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup16($sender) {
@@ -388,6 +403,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
 
       public function Rankup17($sender) {
@@ -403,6 +419,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup18($sender) {
@@ -418,6 +435,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
 
       public function Rankup19($sender) {
@@ -433,6 +451,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup20($sender) {
@@ -448,6 +467,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup21($sender) {
@@ -463,6 +483,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup22($sender) {
@@ -478,6 +499,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup23($sender) {
@@ -493,6 +515,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup24($sender) {
@@ -508,6 +531,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup25($sender) {
@@ -523,6 +547,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
   
       public function Rankup26($sender) {
@@ -538,6 +563,7 @@ class RankUp extends PluginBase{
               }else{ 
                  $sender->sendMessage($this->getConfig()->get("msg"));
 		}
+      return true;
       }
 	
       public function onDisable(){
