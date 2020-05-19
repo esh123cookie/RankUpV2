@@ -20,18 +20,18 @@ msg: "you do not have enough money to rankup"
 # For Cmd put nothing if you want the command to do nothing
 
 # Rank A
-cmd:
-cmd2:
+cmd: "nothing"
+cmd2: "nothing"
 permission1: "rankup.a.use"
 
 # Rank B
-cmd3:
-cmd4:
+cmd3: "nothing"
+cmd4: "nothing"
 permission2: "rankup.b.use"
 
 # Rank C
-cmd5:
-cmd6:
+cmd5: "nothing"
+cmd6: "nothing"
 permission1: "rankup.c.use"
 
 # Rank D  
@@ -40,113 +40,113 @@ cmd8:
 permission4: "rankup.d.use"
 
 # Rank E
-cmd9:
-cmd10:
+cmd9: "nothing"
+cmd10: "nothing"
 permission5: "rankup.e.use"
 
 # Rank F
-cmd11:
-cmd12:
+cmd11: "nothing"
+cmd12: "nothing"
 permission6: "rankup.f.use"
 
 # Rank G
-cmd13:
-cmd14:
+cmd13: "nothing"
+cmd14: "nothing"
 permission7: "rankup.g.use"
 
 # Rank H
-cmd15:
-cmd16:
+cmd15: "nothing"
+cmd16: "nothing"
 permission8: "rankup.h.use"
 
 # Rank I
-cmd17:
-cmd18:
+cmd17: "nothing"
+cmd18: "nothing"
 permission9: "rankup.i.use"
 
 # Rank J
-cmd19:
-cmd20:
+cmd19: "nothing"
+cmd20: "nothing"
 permission10: "rankup.j.use"
 
 # Rank K
-cmd21:
-cmd22:
+cmd21: "nothing"
+cmd22: "nothing"
 permission11: "rankup.k.use"
 
 # Rank L
-cmd23:
-cmd24:
+cmd23: "nothing"
+cmd24: "nothing"
 permission12: "rankup.l.use"
 
 # Rank M
-cmd25:
-cmd26:
+cmd25: "nothing"
+cmd26: "nothing"
 permission13: "rankup.m.use"
 
 # Rank N
-cmd27:
-cmd28:
+cmd27: "nothing"
+cmd28: "nothing"
 permission14: "rankup.a.use"
 
 # Rank O
-cmd29:
-cmd30:
+cmd29: "nothing"
+cmd30: "nothing"
 permission15: "rankup.o.use"
 
 # Rank P
-cmd31:
-cmd32:
+cmd31: "nothing"
+cmd32: "nothing"
 permission16: "rankup.p.use"
 
 # Rank Q
-cmd33:
-cmd34:
+cmd33: "nothing"
+cmd34: "nothing"
 permission17: "rankup.q.use"
 
 # Rank R
-cmd35:
-cmd36:
+cmd35: "nothing"
+cmd36: "nothing"
 permission18: "rankup.r.use"
 
 # Rank S
-cmd37:
-cmd38:
+cmd37: "nothing"
+cmd38: "nothing"
 permission19: "rankup.s.use"
 
 # Rank T
-cmd39:
-cmd40:
+cmd39: "nothing"
+cmd40: "nothing"
 permission20: "rankup.t.use"
 
 # Rank U
-cmd41:
-cmd42:
+cmd41: "nothing"
+cmd42: "nothing"
 permission21: "rankup.u.use"
 
 # Rank V
-cmd43:
-cmd44:
+cmd43: "nothing"
+cmd44: "nothing"
 permission22: "rankup.v.use"
 
 # Rank W
-cmd45:
-cmd46:
+cmd45: "nothing"
+cmd46: "nothing"
 permission23: "rankup.w.use"
 
 # Rank X
-cmd47:
-cmd48:
+cmd47: "nothing"
+cmd48: "nothing"
 permission24: "rankup.x.use"
 
 # Rank Y
-cmd49:
-cmd50:
+cmd49: "nothing"
+cmd50: "nothing"
 permission25: "rankup.y.use"
 
 # Rank Z
-cmd51:
-cmd52:
+cmd51: "nothing"
+cmd52: "nothing"
 permission26: "rankup.z.use"
 
 # version 1.0.0
