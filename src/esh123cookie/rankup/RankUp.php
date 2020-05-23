@@ -86,56 +86,82 @@ class RankUp extends PluginBase{
            if($cmd->getName() == "rankup") {
 	      if ($sender instanceof Player) {
            if($sender->hasPermission($this->getConfig()->get("permission1"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg1"));
               $this->Rankup($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission2"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg2"));
               $this->Rankup2($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission3"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg3"));
               $this->Rankup3($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission4"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg4"));
               $this->Rankup4($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission5"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg5"));
               $this->Rankup5($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission6"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg6"));
               $this->Rankup6($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission7"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg7"));
               $this->Rankup7($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission8"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg8"));
               $this->Rankup8($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission9"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg9"));
               $this->Rankup9($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission10"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg10"));
               $this->Rankup10($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission11"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg11"));
               $this->Rankup11($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission12"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg12"));
               $this->Rankup12($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission13"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg13"));
               $this->Rankup13($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission14"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg14"));
               $this->Rankup14($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission15"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg15"));
               $this->Rankup15($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission16"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg16"));
               $this->Rankup16($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission17"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg17"));
               $this->Rankup17($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission18"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg18"));
               $this->Rankup18($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission19"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg19"));
               $this->Rankup19($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission20"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg20"));
               $this->Rankup20($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission21"))) {
-              $this->Rankup21($sender);
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg21"));
+              $this->Rankup20($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission22"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg22"));
               $this->Rankup22($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission23"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg23"));
               $this->Rankup23($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission24"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg24"));
               $this->Rankup24($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission25"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg25"));
               $this->Rankup25($sender);
            }elseif($sender->hasPermission($this->getConfig()->get("permission26"))) {
+	      $sender->sendMessage($this->getConfig()->get("rankupmsg26"));
               $this->Rankup26($sender);
               }
 	      }
@@ -146,7 +172,6 @@ class RankUp extends PluginBase{
       public function Rankup($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price1");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd = $this->getConfig()->get("cmd");
@@ -162,7 +187,6 @@ class RankUp extends PluginBase{
       public function Rankup2($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price2");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd3 = $this->getConfig()->get("cmd3");
@@ -178,7 +202,6 @@ class RankUp extends PluginBase{
       public function Rankup3($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price3");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd5 = $this->getConfig()->get("cmd5");
@@ -194,7 +217,6 @@ class RankUp extends PluginBase{
       public function Rankup4($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price4");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd7 = $this->getConfig()->get("cmd7");
@@ -210,7 +232,6 @@ class RankUp extends PluginBase{
       public function Rankup5($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price5");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd9 = $this->getConfig()->get("cmd9");
@@ -226,7 +247,6 @@ class RankUp extends PluginBase{
       public function Rankup6($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price6");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd11 = $this->getConfig()->get("cmd11");
@@ -242,7 +262,6 @@ class RankUp extends PluginBase{
       public function Rankup7($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price7");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd13 = $this->getConfig()->get("cmd13");
@@ -258,7 +277,6 @@ class RankUp extends PluginBase{
       public function Rankup8($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price8");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd15 = $this->getConfig()->get("cmd15");
@@ -274,7 +292,6 @@ class RankUp extends PluginBase{
       public function Rankup9($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price9");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd17 = $this->getConfig()->get("cmd17");
@@ -290,7 +307,6 @@ class RankUp extends PluginBase{
       public function Rankup10($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price10");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd19 = $this->getConfig()->get("cmd19");
@@ -306,7 +322,6 @@ class RankUp extends PluginBase{
       public function Rankup11($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price11");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd21 = $this->getConfig()->get("cmd21");
@@ -322,7 +337,6 @@ class RankUp extends PluginBase{
       public function Rankup12($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price12");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd23 = $this->getConfig()->get("cmd23");
@@ -338,7 +352,6 @@ class RankUp extends PluginBase{
       public function Rankup13($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price13");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd25 = $this->getConfig()->get("cmd25");
@@ -354,7 +367,6 @@ class RankUp extends PluginBase{
       public function Rankup14($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price14");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd27 = $this->getConfig()->get("cmd27");
@@ -370,7 +382,6 @@ class RankUp extends PluginBase{
       public function Rankup15($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price15");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd29 = $this->getConfig()->get("cmd29");
@@ -386,7 +397,6 @@ class RankUp extends PluginBase{
       public function Rankup16($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price16");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd31 = $this->getConfig()->get("cmd31");
@@ -402,7 +412,6 @@ class RankUp extends PluginBase{
       public function Rankup17($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price17");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd33 = $this->getConfig()->get("cmd33");
@@ -418,7 +427,6 @@ class RankUp extends PluginBase{
       public function Rankup18($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price18");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd35 = $this->getConfig()->get("cmd35");
@@ -434,7 +442,6 @@ class RankUp extends PluginBase{
       public function Rankup19($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price19");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd37 = $this->getConfig()->get("cmd37");
@@ -450,7 +457,6 @@ class RankUp extends PluginBase{
       public function Rankup20($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price20");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd39 = $this->getConfig()->get("cmd39");
@@ -466,7 +472,6 @@ class RankUp extends PluginBase{
       public function Rankup21($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price21");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd40 = $this->getConfig()->get("cmd41");
@@ -482,7 +487,6 @@ class RankUp extends PluginBase{
       public function Rankup22($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price22");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd43 = $this->getConfig()->get("cmd43");
@@ -498,7 +502,6 @@ class RankUp extends PluginBase{
       public function Rankup23($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price23");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd45 = $this->getConfig()->get("cmd45");
@@ -514,7 +517,6 @@ class RankUp extends PluginBase{
       public function Rankup24($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price24");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd47 = $this->getConfig()->get("cmd47");
@@ -530,7 +532,6 @@ class RankUp extends PluginBase{
       public function Rankup25($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price25");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd49 = $this->getConfig()->get("cmd49");
@@ -546,7 +547,6 @@ class RankUp extends PluginBase{
       public function Rankup26($sender) {
             if(!$sender instanceof Player) return true;
 	      $p = $sender->getName();
-	      $money = EconomyAPI::getInstance()->myMoney($sender);
               $amount = $this->getConfig()->get("price26");
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
                  $cmd51 = $this->getConfig()->get("cmd51");
