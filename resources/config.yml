@@ -22,131 +22,157 @@ msg: "you do not have enough money to rankup"
 # Rank A
 cmd: "nothing"
 cmd2: "nothing"
+rankmsg1: "you ranked up"
 permission1: "rankup.a.use"
 
 # Rank B
 cmd3: "nothing"
 cmd4: "nothing"
+rankmsg2: "you ranked up"
 permission2: "rankup.b.use"
 
 # Rank C
 cmd5: "nothing"
 cmd6: "nothing"
+rankmsg3: "you ranked up"
 permission1: "rankup.c.use"
 
 # Rank D  
-cmd7:
-cmd8:
+cmd7: "nothing"
+cmd8: "nothing"
+rankmsg4: "you ranked up"
 permission4: "rankup.d.use"
 
 # Rank E
 cmd9: "nothing"
 cmd10: "nothing"
+rankmsg5: "you ranked up"
 permission5: "rankup.e.use"
 
 # Rank F
 cmd11: "nothing"
 cmd12: "nothing"
+rankmsg6: "you ranked up"
 permission6: "rankup.f.use"
 
 # Rank G
 cmd13: "nothing"
 cmd14: "nothing"
+rankmsg7: "you ranked up"
 permission7: "rankup.g.use"
 
 # Rank H
 cmd15: "nothing"
 cmd16: "nothing"
+rankmsg8: "you ranked up"
 permission8: "rankup.h.use"
 
 # Rank I
 cmd17: "nothing"
 cmd18: "nothing"
+rankmsg9: "you ranked up"
 permission9: "rankup.i.use"
 
 # Rank J
 cmd19: "nothing"
 cmd20: "nothing"
+rankmsg10: "you ranked up"
 permission10: "rankup.j.use"
 
 # Rank K
 cmd21: "nothing"
 cmd22: "nothing"
+rankmsg11: "you ranked up"
 permission11: "rankup.k.use"
 
 # Rank L
 cmd23: "nothing"
 cmd24: "nothing"
+rankmsg12: "you ranked up"
 permission12: "rankup.l.use"
 
 # Rank M
 cmd25: "nothing"
 cmd26: "nothing"
+rankmsg13: "you ranked up"
 permission13: "rankup.m.use"
 
 # Rank N
 cmd27: "nothing"
 cmd28: "nothing"
+rankmsg14: "you ranked up"
 permission14: "rankup.a.use"
 
 # Rank O
 cmd29: "nothing"
 cmd30: "nothing"
+rankmsg15: "you ranked up"
 permission15: "rankup.o.use"
 
 # Rank P
 cmd31: "nothing"
 cmd32: "nothing"
+rankmsg16: "you ranked up"
 permission16: "rankup.p.use"
 
 # Rank Q
 cmd33: "nothing"
 cmd34: "nothing"
+rankmsg17: "you ranked up"
 permission17: "rankup.q.use"
 
 # Rank R
 cmd35: "nothing"
 cmd36: "nothing"
+rankmsg18: "you ranked up"
 permission18: "rankup.r.use"
 
 # Rank S
 cmd37: "nothing"
 cmd38: "nothing"
+rankmsg19: "you ranked up"
 permission19: "rankup.s.use"
 
 # Rank T
 cmd39: "nothing"
 cmd40: "nothing"
+rankmsg20: "you ranked up"
 permission20: "rankup.t.use"
 
 # Rank U
 cmd41: "nothing"
 cmd42: "nothing"
+rankmsg21: "you ranked up"
 permission21: "rankup.u.use"
 
 # Rank V
 cmd43: "nothing"
 cmd44: "nothing"
+rankmsg22: "you ranked up"
 permission22: "rankup.v.use"
 
 # Rank W
 cmd45: "nothing"
 cmd46: "nothing"
+rankmsg23: "you ranked up"
 permission23: "rankup.w.use"
 
 # Rank X
 cmd47: "nothing"
 cmd48: "nothing"
+rankmsg24: "you ranked up"
 permission24: "rankup.x.use"
 
 # Rank Y
 cmd49: "nothing"
 cmd50: "nothing"
+rankmsg25: "you ranked up"
 permission25: "rankup.y.use"
 
 # Rank Z
 cmd51: "nothing"
 cmd52: "nothing"
+rankmsg26: "you ranked up"
 permission26: "rankup.z.use"
 
 # version 1.0.0
