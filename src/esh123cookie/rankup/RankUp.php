@@ -74,6 +74,8 @@ class RankUp extends PluginBase{
       public function onEnable(){
         $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
       }
+	
+	//perms
   
       public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
       {
@@ -168,6 +170,8 @@ class RankUp extends PluginBase{
 	   }
       return true;
       }
+	
+      // Rankup part
   
       public function Rankup($sender) {
             if(!$sender instanceof Player) return true;
