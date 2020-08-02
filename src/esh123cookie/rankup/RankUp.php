@@ -101,7 +101,7 @@ class RankUp extends PluginBase implements Listener {
       	    $ranks->setNested("ranks", $messages);
       	    $ranks->save();
 	    
-	    foreach ($this->getServer->getOnlinePlayers() as $player){
+	    foreach ($this->getPlugin()->getServer->getOnlinePlayers() as $player){
   
 	    $rank = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
 	    $this->rank = $this->getRank($player, $this->getConfig()->get("rank"));
