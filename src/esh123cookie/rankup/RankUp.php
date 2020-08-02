@@ -87,6 +87,7 @@ class RankUp extends PluginBase{
     public $nomoney;
   
       public function onEnable(){
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
 	      
       	    $ranks = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
