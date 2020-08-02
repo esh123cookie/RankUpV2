@@ -157,9 +157,9 @@ class RankUp extends PluginBase implements Listener {
 		return (($config->exists("rank"))) ? true : false;
       }
 	
-      public function getRank(Player $player): int{
+      public function getRank(Player $player) {
   		$config = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
-		$config->get("rank");
+		return $config->get("rank");
       }
 	
 	//perms
