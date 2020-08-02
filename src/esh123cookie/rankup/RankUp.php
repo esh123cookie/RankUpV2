@@ -84,7 +84,7 @@ class RankUp extends PluginBase{
 	
     private $rank;
     public $message;
-    private $;
+    public $nomoney;
   
       public function onEnable(){
         $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
