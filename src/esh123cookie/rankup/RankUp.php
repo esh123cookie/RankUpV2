@@ -181,7 +181,7 @@ class RankUp extends PluginBase implements Listener {
   
       public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
       {
-      $rank = $this->getRank($sender, (int) $this->getConfig()->get("rank"));
+      $rank = $this->getRank($sender, $this->getConfig()->get("rank"));
 	   if($cmd->getName() == "ruabout") {
 	      if ($sender instanceof Player) {
 	      $sender->sendMessage("§7(§a!§7) Plugin made by: esh123cookie for custom plugins message me on my discord @bigbozzlmao#4035"); 
