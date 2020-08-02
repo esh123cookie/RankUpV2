@@ -36,8 +36,8 @@ use pocketmine\Player;
 
 class RankupCheck extends PluginTask {
 
-      private rank;
-      private nextrank;
+      private $rank;
+      private $nextrank;
       
       private $plugin;
 	
