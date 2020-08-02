@@ -53,10 +53,10 @@ class RankupCheck extends PluginTask {
     
 	    foreach ($this->plugin->getServer()->getOnlinePlayers() as $player){
     
-	  	$config = new Config($this->plugin->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
-      $this->plugin->nextrank = $this->plugin->getNextRank($player, $config->get("nextrank"));
+	    $config = new Config($this->plugin->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+            $this->plugin->nextrank = $this->plugin->getNextRank($player, $config->get("nextrank"));
 	    $rank = new Config($this->plugin->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
-      $this->plugin->rank = $this->plugin->getNextRank($player, $config->get("nextrank"));
+            $this->plugin->rank = $this->plugin->getNextRank($player, $config->get("nextrank"));
 	    if($this->plugin->rank == "A") { 
 	       $rank->set("nextrank", "B");
 	       $rank->save();
@@ -129,6 +129,7 @@ class RankupCheck extends PluginTask {
 	    }elseif($this->plugin->rank == "Z") { 
 	       $rank->set("nextrank", "Y");
 	       $rank->save();
-         }
 	    }
+	    }
+    }
 }
