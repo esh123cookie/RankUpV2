@@ -89,15 +89,15 @@ class RankUp extends PluginBase{
       public function onEnable(){
         $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
 	      
-      	    $cfg = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
-            $ranks = [
-      	    	$prices->setNested("no-money", "Not enough money to rank up");
-      	    	$prices->setNested("message", "You ranked up to rank");
+      	    $ranks = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
+            $messages = [
+      	    	$ranks->setNested("no-money", "Not enough money to rank up");
+      	    	$ranks->setNested("message", "You ranked up to rank");
       	    ];
 	      
 	    $this->nomoney = $cfg->get("no-money");
 	    $this->message = $cfg->get("message");
-      	    $cfg->setNested("rank", $ranks);
+      	    $cfg->setNested("rank", $messages);
       	    $cfg->save();
 	    
 	    foreach ($this->getServer->getOnlinePlayers() as $player){
