@@ -52,7 +52,7 @@ class RankupCheck extends PluginTask {
     public function onRun($tick){
     
 	    foreach ($this->plugin->getServer()->getOnlinePlayers() as $player){
-	    if($this->plugin->getDataFolder(). "data." $player->getLowerCaseName() . ".yml", Config::YAML) == null) {
+	    if($this->plugin->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML) == null) {
 	       $this->plugin->getLogger()->info("§cRankup no players found");
 	    }else{
 	    $config = new Config($this->plugin->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
