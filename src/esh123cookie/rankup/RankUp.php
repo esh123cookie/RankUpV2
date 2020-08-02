@@ -98,13 +98,7 @@ class RankUp extends PluginBase implements Listener {
 	      
 	    $this->nomoney = $ranks->get("no-money");
 	    $this->message = $ranks->get("message");
-      	    $ranks->setNested("ranks", $messages);
       	    $ranks->save();
-	    
-	    foreach ($this->getServer()->getOnlinePlayers() as $player){
-  
-	    $rank = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
-	    $this->rank = $this->getRank($player, $this->getConfig()->get("rank"));
 	      
       	    $prices = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
             $price = [
@@ -135,9 +129,12 @@ class RankUp extends PluginBase implements Listener {
       	    	$prices->setNested("Y", 0),
       	    	$prices->setNested("Z", 0)
       	    ];
-	      
-      	    $prices->setNested("prices", $prices);
       	    $prices->save();
+	    
+	    foreach ($this->getServer()->getOnlinePlayers() as $player){
+  
+	    $rank = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+	    $this->rank = $this->getRank($player, $this->getConfig()->get("rank"));
 	    }
       }
 	
@@ -184,7 +181,7 @@ class RankUp extends PluginBase implements Listener {
   
       public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
       {
-      $rank = $this->getRank($player, (int) $this->getConfig()->get("level"));
+      $rank = $this->getRank($sender, (int) $this->getConfig()->get("rank"));
 	   if($cmd->getName() == "ruabout") {
 	      if ($sender instanceof Player) {
 	      $sender->sendMessage("§7(§a!§7) Plugin made by: esh123cookie for custom plugins message me on my discord @bigbozzlmao#4035"); 
@@ -285,7 +282,7 @@ class RankUp extends PluginBase implements Listener {
 	
       // Rankup part
       /* if someone does fork thats how you add more ranks       
-	        $config = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+	        $config = new Config($this->getDataFolder() . "data." . $sender->getLowerCaseName() . ".yml", Config::YAML);
 		$config->set("rank", $this->rank);
 		$config->save();
       */
