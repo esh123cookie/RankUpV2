@@ -37,7 +37,7 @@ use pocketmine\command\CommandExecutor;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\Player;
 use pocketmine\level\sound\PopSound;
-use pocketmine\event\Listeners;
+use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\scheduler\Task;
 use pocketmine\level\Level;
@@ -67,7 +67,7 @@ use _64FF00\PureChat\PureChat;
 use _64FF00\PurePerms\PPGroup;
 use onebone\economyapi\EconomyAPI;
 
-class RankUp extends PluginBase{
+class RankUp extends PluginBase implements Listener {
   
     /** @var provider */
     private $provider;
