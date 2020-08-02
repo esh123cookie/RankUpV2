@@ -3,7 +3,6 @@ version: 1.0.0
 api: [3.0.0, 3.9.3, 4.0.0]
 main: esh123cookie\rankup\RankUp
 author: esh123cookie
-depend: [PurePerms, PureChat]
 commands:
   rankup:
      default: op
@@ -13,3 +12,6 @@ commands:
   ruabout:
      default: op
      description: about rankup
+  mines:
+     default: true
+     description: warp to mines
