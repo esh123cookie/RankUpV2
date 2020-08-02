@@ -91,52 +91,52 @@ class RankUp extends PluginBase{
 	      
       	    $ranks = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
             $messages = [
-      	    	$ranks->setNested("no-money", "Not enough money to rank up");
-      	    	$ranks->setNested("message", "You ranked up to rank");
+      	    	$ranks->setNested("no-money", "Not enough money to rank up"),
+      	    	$ranks->setNested("message", "You ranked up to rank")
       	    ];
 	      
-	    $this->nomoney = $cfg->get("no-money");
-	    $this->message = $cfg->get("message");
-      	    $cfg->setNested("rank", $messages);
-      	    $cfg->save();
+	    $this->nomoney = $ranks->get("no-money");
+	    $this->message = $ranks->get("message");
+      	    $ranks->setNested("ranks", $messages);
+      	    $ranks->save();
 	    
 	    foreach ($this->getServer->getOnlinePlayers() as $player){
   
 	    $rank = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
 	    $this->rank = $this->getRank($player, $this->getConfig()->get("rank"));
 	      
-      	    $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
-            $prices = [
-      	    	$prices->setNested("A", 0);
-      	    	$prices->setNested("B", 0);
-      	    	$prices->setNested("C", 0);
-      	    	$prices->setNested("D", 0);
-      	    	$prices->setNested("E", 0);
-      	    	$prices->setNested("F", 0);
-      	    	$prices->setNested("G", 0);
-      	    	$prices->setNested("H", 0);
-      	    	$prices->setNested("I", 0);
-      	    	$prices->setNested("J", 0);
-      	    	$prices->setNested("K", 0);
-      	    	$prices->setNested("L", 0);
-      	    	$prices->setNested("M", 0);
-      	    	$prices->setNested("N", 0);
-      	    	$prices->setNested("O", 0);
-      	    	$prices->setNested("P", 0);
-      	    	$prices->setNested("Q", 0);
-      	    	$prices->setNested("R", 0);
-      	    	$prices->setNested("S", 0);
-      	    	$prices->setNested("T", 0);
-      	    	$prices->setNested("U", 0);
-      	    	$prices->setNested("V", 0);
-      	    	$prices->setNested("W", 0);
-      	    	$prices->setNested("X", 0);
-      	    	$prices->setNested("Y", 0);
-      	    	$prices->setNested("Z", 0);
+      	    $prices = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
+            $price = [
+      	    	$prices->setNested("A", 0),
+      	    	$prices->setNested("B", 0),
+      	    	$prices->setNested("C", 0),
+      	    	$prices->setNested("D", 0),
+      	    	$prices->setNested("E", 0),
+      	    	$prices->setNested("F", 0),
+      	    	$prices->setNested("G", 0),
+      	    	$prices->setNested("H", 0),
+      	    	$prices->setNested("I", 0),
+      	    	$prices->setNested("J", 0),
+      	    	$prices->setNested("K", 0),
+      	    	$prices->setNested("L", 0),
+      	    	$prices->setNested("M", 0),
+      	    	$prices->setNested("N", 0),
+      	    	$prices->setNested("O", 0),
+      	    	$prices->setNested("P", 0),
+      	    	$prices->setNested("Q", 0),
+      	    	$prices->setNested("R", 0),
+      	    	$prices->setNested("S", 0),
+      	    	$prices->setNested("T", 0),
+      	    	$prices->setNested("U", 0),
+      	    	$prices->setNested("V", 0),
+      	    	$prices->setNested("W", 0),
+      	    	$prices->setNested("X", 0),
+      	    	$prices->setNested("Y", 0),
+      	    	$prices->setNested("Z", 0)
       	    ];
 	      
-      	    $price->setNested("prices", $prices);
-      	    $price->save();
+      	    $prices->setNested("prices", $prices);
+      	    $prices->save();
 	    }
       }
 	
