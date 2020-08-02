@@ -39,7 +39,6 @@ use pocketmine\Player;
 use pocketmine\level\sound\PopSound;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
-use pocketmine\scheduler\Task;
 use pocketmine\level\Level;
 use pocketmine\Server;
 use pocketmine\event\player\PlayerExhaustEvent;
