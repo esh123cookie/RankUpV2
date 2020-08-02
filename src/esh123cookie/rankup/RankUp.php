@@ -67,6 +67,13 @@ use _64FF00\PureChat\PureChat;
 use _64FF00\PurePerms\PPGroup;
 use onebone\economyapi\EconomyAPI;
 
+//tasks
+use pocketmine\scheduler\ClosureTask;
+use pocketmine\scheduler\Task;
+use pocketmine\scheduler\TaskScheduler;
+
+use esh123cookie\rankup\task\RankupCheck;
+
 class RankUp extends PluginBase implements Listener {
   
     /** @var provider */
@@ -131,86 +138,15 @@ class RankUp extends PluginBase implements Listener {
       	    	$prices->setNested("Z", 0)
       	    ];
       	    $prices->save();
+	      
+	    $this->getScheduler()->scheduleRepeatingTask(new RankupCheck($this), 1);
 
 	    foreach ($this->getServer()->getOnlinePlayers() as $player){
 	      
 	    $this->nextrank = $this->getNextRank($player, $this->getConfig()->get("nextrank"));
 	    $rank = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
-	    if($this->rank == "A") { 
-	       $rank->set("nextrank", "B");
-	       $rank->save();
-	    }elseif($this->rank == "B") { 
-	       $rank->set("nextrank", "C");
-	       $rank->save();
-	    }elseif($this->rank == "C") { 
-	       $rank->set("nextrank", "D");
-	       $rank->save();
-	    }elseif($this->rank == "D") { 
-	       $rank->set("nextrank", "E");
-	       $rank->save();
-	    }elseif($this->rank == "E") { 
-	       $rank->set("nextrank", "F");
-	       $rank->save();
-	    }elseif($this->rank == "F") { 
-	       $rank->set("nextrank", "G");
-	       $rank->save();
-	    }elseif($this->rank == "G") { 
-	       $rank->set("nextrank", "H");
-	       $rank->save();
-	    }elseif($this->rank == "H") { 
-	       $rank->set("nextrank", "I");
-	       $rank->save();
-	    }elseif($this->rank == "I") { 
-	       $rank->set("nextrank", "J");
-	       $rank->save();
-	    }elseif($this->rank == "J") { 
-	       $rank->set("nextrank", "K");
-	       $rank->save();
-	    }elseif($this->rank == "K") { 
-	       $rank->set("nextrank", "L");
-	       $rank->save();
-	    }elseif($this->rank == "L") { 
-	       $rank->set("nextrank", "M");
-	       $rank->save();
-	    }elseif($this->rank == "M") { 
-	       $rank->set("nextrank", "N");
-	       $rank->save();
-	    }elseif($this->rank == "N") { 
-	       $rank->set("nextrank", "O");
-	       $rank->save();
-	    }elseif($this->rank == "O") { 
-	       $rank->set("nextrank", "P");
-	       $rank->save();
-	    }elseif($this->rank == "P") { 
-	       $rank->set("nextrank", "Q");
-	       $rank->save();
-	    }elseif($this->rank == "Q") { 
-	       $rank->set("nextrank", "R");
-	       $rank->save();
-	    }elseif($this->rank == "R") { 
-	       $rank->set("nextrank", "S");
-	       $rank->save();
-	    }elseif($this->rank == "S") { 
-	       $rank->set("nextrank", "T");
-	       $rank->save();
-	    }elseif($this->rank == "T") { 
-	       $rank->set("nextrank", "U");
-	       $rank->save();
-	    }elseif($this->rank == "U") { 
-	       $rank->set("nextrank", "V");
-	       $rank->save();
-	    }elseif($this->rank == "V") { 
-	       $rank->set("nextrank", "W");
-	       $rank->save();
-	    }elseif($this->rank == "Y") { 
-	       $rank->set("nextrank", "X");
-	       $rank->save();
-	    }elseif($this->rank == "Z") { 
-	       $rank->set("nextrank", "Y");
-	       $rank->save();
-	    }
 	       
-	       $this->rank = $this->getRank($player, $this->getConfig()->get("rank"));
+	    $this->rank = $this->getRank($player, $this->getConfig()->get("rank"));
 	    }
       }
 	
