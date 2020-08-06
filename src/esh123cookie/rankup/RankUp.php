@@ -309,7 +309,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "B");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -324,7 +324,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "C");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -339,7 +339,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "D");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -354,7 +354,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "E");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -369,7 +369,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "F");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -384,7 +384,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "G");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -399,7 +399,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "H");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -414,7 +414,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "I");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -429,7 +429,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "J");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -444,7 +444,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "K");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -459,7 +459,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "L");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -474,7 +474,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "M");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -489,7 +489,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "N");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -504,7 +504,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "N";
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -519,7 +519,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "O");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -534,7 +534,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "P");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -549,7 +549,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "Q");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -564,7 +564,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "R");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -579,7 +579,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "S");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -594,7 +594,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "T");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -609,7 +609,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "U");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -624,7 +624,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "V");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -639,7 +639,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "W");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -654,7 +654,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "X");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -669,7 +669,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "Y");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
@@ -684,7 +684,7 @@ class RankUp extends PluginBase implements Listener {
 	      $price = new Config($this->getDataFolder() . "/prices.yml", Config::YAML);
 	      $cost = $price->get($this->rank);
              	if(\pocketmine\Server::getInstance()->getPluginManager()->getPlugin("EconomyAPI")->myMoney($sender) >= ($cost)){
-		$rank->set("rank", "A");
+		$rank->set("rank", "Z");
 		$rank->save();
               }else{ 
                  $sender->sendMessage($this->nomoney);
