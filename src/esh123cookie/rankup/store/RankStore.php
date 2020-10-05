@@ -22,14 +22,7 @@ class RankStore {
 	
     public function getPlugin(){
 	return $this->plugin;
-    }
-	
-    public function setRankConfig(): void { 
-	    foreach($this->getRanks() as $this->rank) { 
-	    foreach($this->getRankPrices() as $this->price) {
-	    }
-	}
-    }    
+    }  
 	
     public function getRankPrices(): array { 
       	    $prices = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
