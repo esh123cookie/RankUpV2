@@ -52,12 +52,6 @@ class RankStore {
 	    return (int) array_key_last($this->prices);
     }
 	
-    public function getRankPlace(): array { 
-      	    $prices = new Config($this->plugin->getDataFolder() . "/ranks.yml", Config::YAML);
-            $this->prices = $prices->getAll()["ranktype"];
-            return $this->prices;
-    }
-	
     public function getRankPrices(): array { 
       	    $prices = new Config($this->plugin->getDataFolder() . "/ranks.yml", Config::YAML);
             $this->prices = $prices->getAll()["price"];
