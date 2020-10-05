@@ -1,10 +1,13 @@
 # RankUp Plugin made by esh123cookie 
-# Discord: bigbozzlmao#4035
 # Plugin made for people who cannot find an updated version for rankup
 # To use this plugin you will need pureperms and purechat
 
 # version 2.0.0
 # Simple rankup plugin 
 
-# Will add prefix and suffix addon 
-# Will add commands
+# ranks 
+
+A:
+  rank: "A"
+  price: "50"
+#commands next
