@@ -12,9 +12,9 @@ class RankStore {
 	
     private $plugin;
 	
-    public $price;
+    public $prices;
 
-    public $rank;
+    public $ranks;
 
     public function __construct(RankUp $plugin) {
         $this->plugin = $plugin;
@@ -22,17 +22,46 @@ class RankStore {
 	
     public function getPlugin(){
 	return $this->plugin;
-    }  
+    } 
+	
+    public function getEachRank(): int { 
+	    foreach($this->ranks as $rank) {
+	    return (int) $rank;
+    }
+	
+    public function getFirstRankInt(): int { 
+	    return (int) array_key_first($this->ranks);
+    }
+	
+    public function getFirstRankString(): string { 
+	    return array_key_first($this->ranks);
+    }
+	
+    public function getFirstPrice(): int { 
+	    return (int) array_key_first($this->prices);
+    }
+	
+    public function getLastRankInt(): int { 
+	    return (int) array_key_last($this->ranks);
+    }
+	
+    public function getLastRankString(): string { 
+	    return array_key_last($this->ranks);
+    }
+	
+    public function getLastPrice(): int { 
+	    return (int) array_key_last($this->prices);
+    }
 	
     public function getRankPrices(): array { 
       	    $prices = new Config($this->plugin->getDataFolder() . "/ranks.yml", Config::YAML);
-            $rankPrices = $prices->getAll()["price"];
-            return $rankPrices;
+            $this->prices = $prices->getAll()["price"];
+            return $this->prices;
     }
 	
     public function getRanks(): array { 
       	    $ranks = new Config($this->plugin->getDataFolder() . "/ranks.yml", Config::YAML);
-            $rank = $ranks->getAll()["rank"];
-            return $rank;
+            $this->ranks = $ranks->getAll()["rank"];
+            return $this->ranks;
     }
 }
