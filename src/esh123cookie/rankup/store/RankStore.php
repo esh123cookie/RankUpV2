@@ -24,9 +24,8 @@ class RankStore {
 	return $this->plugin;
     } 
 	
-    public function getEachRank(): int { 
-	    foreach($this->ranks as $rank) {
-	    return (int) $rank;
+    public function getRankCount(): int { 
+	    return count($this->ranks);
     }
 	
     public function getFirstRankInt(): int { 
@@ -51,6 +50,12 @@ class RankStore {
 	
     public function getLastPrice(): int { 
 	    return (int) array_key_last($this->prices);
+    }
+	
+    public function getRankPlace(): array { 
+      	    $prices = new Config($this->plugin->getDataFolder() . "/ranks.yml", Config::YAML);
+            $this->prices = $prices->getAll()["ranktype"];
+            return $this->prices;
     }
 	
     public function getRankPrices(): array { 
