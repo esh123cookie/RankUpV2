@@ -2,7 +2,7 @@
 
 namespace esh123cookie\rankup\store;
 
-use rankup\RankUp;
+use esh123cookie\rankup\RankUp;
 use pocketmine\utils\config;
 use pocketmine\event\Listener;
 use pocketmine\plugin\Plugin;
