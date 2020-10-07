@@ -6,7 +6,7 @@ use rankup\RankUp;
 use pocketmine\utils\config;
 use pocketmine\event\Listener;
 
-class RankStore {
+class RankStore implements Listener{
 	
     private $config;
 	
