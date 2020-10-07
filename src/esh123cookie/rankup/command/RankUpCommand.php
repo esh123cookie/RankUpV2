@@ -30,6 +30,8 @@ use function microtime;
 use function number_format;
 use function round;
 
+use onebone\economyapi\EconomyAPI;
+
 use pocketmine\utils\Config;
 
 class RankUpCommand implements Listener{
@@ -68,7 +70,6 @@ class RankUpCommand implements Listener{
 	   }
     }
 	
-    //add prices too (make price factory)
     public function rankUp(Player $player) {
 	    $config = new Config($this->plugin->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 	    $first = array_key_first($this->getStore()->getRankCount());
@@ -80,9 +81,16 @@ class RankUpCommand implements Listener{
 	    }else{
 	       $key = ($rank + 1);
        	       $nextRank = $this->getStore()->get_next_key_array($this->getStore()->getRanks(), [$key]);
-	       $this->setRank($nextRank, $player);
-	       $this->setRankInt($player, $key);
-	       $this->worldMessage($messages->get("rankup"));
+	       $money = $this->getStore()->get_next_key_array($this->getStore()->getRankPrices(), [$key]);
+	       if(EconomyAPI::getInstance()->myMoney($player) >= $money) { 
+	          EconomyAPI::getInstance()->removeMoney($player, $money); 
+	          $this->setRank($nextRank, $player);
+	          $this->setRankInt($player, $key);
+	          $this->setNextRankInt($player, $key);
+	          $this->worldMessage($messages->get("rankup"));
+	       }else{
+		  $this->message($player, $messages->get("no-money"));
+	       }
 	    }
     }
 	    
@@ -96,10 +104,13 @@ class RankUpCommand implements Listener{
 	    
     public function setRankInt(Player $player, int $key) { 
 	$config = new Config($this->plugin->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
+	return $config->set("rank", $key);
+    }
+	
+    public function setNextRankInt(Player $player, int $key) { 
+	$config = new Config($this->plugin->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 	$math = ($key + 1);
-	$config->set("rank", $key);
-	$config->set("nextrank", $math);
-	$config->save();
+	return $config->set("nextrank", $math);
     }
 	    
     public function setRank(Player $player, $rank) {
