@@ -72,6 +72,7 @@ use pocketmine\scheduler\Task;
 use pocketmine\scheduler\TaskScheduler;
 
 use esh123cookie\rankup\store\RankStore; 
+use esh123cookie\rankup\command\RankUpCommand;
 
 class RankUp extends PluginBase implements Listener {
   
@@ -118,9 +119,8 @@ class RankUp extends PluginBase implements Listener {
 			    }
 		    }
 	    }
-	      
-	    //could be done using command map (gonna check if its more effective) atm this is better
-	    $this->getServer()->getPluginManager()->registerEvents(new Commands($this), $this);
+	    
+	    $this->getServer()->getPluginManager()->registerEvents(new RankUpCommand($this), $this);
       }
 	
       public function onJoin(PlayerJoinEvent $event) {
@@ -135,27 +135,6 @@ class RankUp extends PluginBase implements Listener {
 		   $rank->save();
 		}
       }
-	
-      /*
-      public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
-      {
-      	   $rank = $this->getRank($sender, $this->getConfig()->get("rank"));
-	   if($cmd->getName() == "ruabout") {
-	      if ($sender instanceof Player) {
-	      $sender->sendMessage("§7(§a!§7) Plugin made by: esh123cookie for custom plugins message me on my discord @bigbozzlmao#4035"); 
-              }
-              return true;
-	   }
-	   if($cmd->getName() == "mines") {
-	      if ($sender instanceof Player) {
-		  $this->mines($sender);
-              }
-              return true;
-	   }
-           if($cmd->getName() == "rankup") {
-	   }
-      }
-      */
 	
       public function AntiSteal(Player $p){
 		$name = $p->getName();
