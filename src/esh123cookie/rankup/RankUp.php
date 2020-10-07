@@ -135,6 +135,7 @@ class RankUp extends PluginBase implements Listener {
 	    }else{
 	       $config->save();
 	       $this->saveResource("/ranks.yml");
+	    }
       }
 	
       public function onJoin(PlayerJoinEvent $event) {
