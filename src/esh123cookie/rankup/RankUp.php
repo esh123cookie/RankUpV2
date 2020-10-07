@@ -102,7 +102,7 @@ class RankUp extends PluginBase implements Listener {
                 @mkdir($this->playerFolder, 0777, true);
 	    }
 	      
-      	    $ranks = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
+      	    $ranks = new Config($this->getDataFolder() . "/messages.yml", Config::YAML);
             $messages = [
       	    	$ranks->setNested("no-money", "Not enough money to rank up"),
       	    	$ranks->setNested("message", "You ranked up to rank")
@@ -172,17 +172,17 @@ class RankUp extends PluginBase implements Listener {
       }
 	
       public function userExists(Player $player): bool{
-		$config = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+		$config = new Config($this->playerFolder . strtolower($player->getName) . ".yml", Config::YAML);
 		return (($config->exists("rank")) && ($config->exists("nextrank"))) ? true : false;
       }
 	
       public function getNextRank(Player $player) {
-  		$config = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+		$config = new Config($this->playerFolder . strtolower($player->getName) . ".yml", Config::YAML);
 		return $config->get("nextrank");
       }
 	      
       public function getRank(Player $player) {
-  		$config = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+		$config = new Config($this->playerFolder . strtolower($player->getName) . ".yml", Config::YAML);
 		return $config->get("rank");
       }
 }
