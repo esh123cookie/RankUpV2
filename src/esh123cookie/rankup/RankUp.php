@@ -107,6 +107,7 @@ class RankUp extends PluginBase implements Listener {
       	    $ranks = new Config($this->getDataFolder() . "/messages.yml", Config::YAML);
             $messages = [
       	    	$ranks->setNested("player-message", true), //if true send player a message
+      	    	$ranks->setNested("no-money", "not enough money to rankup"),
       	    	$ranks->setNested("player-rankup-message", "you ranked up"),
       	    	$ranks->setNested("max-rank", "Already max rank"),
       	    	$ranks->setNested("no-money", "Not enough money to rank up"),
