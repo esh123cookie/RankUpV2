@@ -73,6 +73,7 @@ use pocketmine\scheduler\TaskScheduler;
 
 use esh123cookie\rankup\store\RankStore; 
 use esh123cookie\rankup\command\RankUpCommand;
+use esh123cookie\rankup\store\RankStore;
 
 class RankUp extends PluginBase implements Listener {
   
@@ -124,6 +125,7 @@ class RankUp extends PluginBase implements Listener {
 	    }
 	    
 	    $this->getServer()->getPluginManager()->registerEvents(new RankUpCommand($this), $this);
+	    $this->getServer()->getPluginManager()->registerEvents(new RankStore($this), $this);
       }
 	
       public function onJoin(PlayerJoinEvent $event) {
