@@ -169,7 +169,7 @@ class RankUp extends PluginBase implements Listener {
       public function registerUser(Player $player): void{
 		$config = new Config($this->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 		if((!$config->exists("rank"))){
-			$config->setAll(["player" => $player->getName(), "rank" => "None", "nextrank" => "A"]);
+			$config->setAll(["player" => $player->getName(), "rank" => 0, "nextrank" => 1]); //0 = default and 1 = next
 			$config->save();
 		}
       }
