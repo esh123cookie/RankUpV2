@@ -5,6 +5,7 @@ namespace esh123cookie\rankup\store;
 use rankup\RankUp;
 use pocketmine\utils\config;
 use pocketmine\event\Listener;
+use pocketmine\plugin\Plugin;
 
 class RankStore implements Listener{
 	
