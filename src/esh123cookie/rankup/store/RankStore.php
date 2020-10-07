@@ -24,7 +24,7 @@ class RankStore {
 	return $this->plugin;
     }
 	
-    public function get_next_key_array($array, $key){
+    public function get_next_key_array($array, $key){ //rank will be displayed as int and turned to string
     	$keys = array_keys($array);
     	$position = array_search($key, $keys);
     	if (isset($keys[$position + 1])) {
@@ -41,20 +41,12 @@ class RankStore {
 	    return (int) array_key_first($this->ranks);
     }
 	
-    public function getFirstRankString(): string { 
-	    return array_key_first($this->ranks);
-    }
-	
     public function getFirstPrice(): int { 
 	    return (int) array_key_first($this->prices);
     }
 	
     public function getLastRankInt(): int { 
 	    return (int) array_key_last($this->ranks);
-    }
-	
-    public function getLastRankString(): string { 
-	    return array_key_last($this->ranks);
     }
 	
     public function getLastPrice(): int { 
