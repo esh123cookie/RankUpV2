@@ -125,6 +125,8 @@ class RankUp extends PluginBase implements Listener {
 	    
 	    $this->getServer()->getPluginManager()->registerEvents(new RankUpCommand($this), $this);
 	    $this->getServer()->getPluginManager()->registerEvents(new RankStore($this), $this);
+	    
+	    $this->saveResource("/ranks.yml");
       }
 	
       public function onJoin(PlayerJoinEvent $event) {
