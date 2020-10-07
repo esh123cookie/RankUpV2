@@ -72,6 +72,7 @@ use pocketmine\scheduler\Task;
 use pocketmine\scheduler\TaskScheduler;
 
 use esh123cookie\rankup\task\RankupCheck;
+use esh123cookie\rankup\store\RankStore; 
 
 class RankUp extends PluginBase implements Listener {
   
@@ -88,11 +89,18 @@ class RankUp extends PluginBase implements Listener {
     public $prices;
 	
     private $nextrank;
+	
+    public $playerFolder;
   
-      public function onEnable(){
+    public function onEnable(){
         self::$instance = $this;
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
+	      
+            if(!file_exists($this->playerFolder)) {
+                $this->playerFolder = $this->getDataFolder() . "Players/";
+                @mkdir($this->playerFolder, 0777, true);
+	    }
 	      
       	    $ranks = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
             $messages = [
@@ -118,23 +126,15 @@ class RankUp extends PluginBase implements Listener {
 	    //$this->getScheduler()->scheduleRepeatingTask(new RankupCheck($this), 1); prolly finna be removed
       }
 	
-      public function prepare(): void{
-		if(!is_dir($this->getDataFolder() . "data.")){
-			mkdir($this->getDataFolder() . "data.");
-		}
-      }
-	
-	//perms
-	
       public function onJoin(PlayerJoinEvent $event) {
         $player = $event->getPlayer();
 	if(!$this->userExists($player)){
-	    $this->getLogger()->info("Creating new RankUp profile");
+	    $this->getLogger()->info("Creating new RankUp profile for " . strtolower($player->getName));
 	    $this->registerUser($player);
 		}
 		if($event->getPlayer()->hasPlayedBefore() == false) {
-		   $rank = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
-		   $rank->set("rank", "A");
+		   $rank = new Config($this->playerFolder . strtolower($player->getName) . ".yml", Config::YAML);
+		   $rank->set("rank", new RankStore()->getFirstRankString());
 		   $rank->save();
 		}
       }
@@ -188,7 +188,7 @@ class RankUp extends PluginBase implements Listener {
       }
 	
       public function registerUser(Player $player): void{
-		$config = new Config($this->getDataFolder() . "data." . $player->getLowerCaseName() . ".yml", Config::YAML);
+		$config = new Config($this->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 		if((!$config->exists("rank"))){
 			$config->setAll(["player" => $player->getName(), "rank" => "None", "nextrank" => "A"]);
 			$config->save();
