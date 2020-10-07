@@ -102,6 +102,7 @@ class RankUp extends PluginBase implements Listener {
                 @mkdir($this->playerFolder, 0777, true);
 	    }
 	      
+            if(!file_exists($this->getDataFolder() . "/messages.yml")) {
       	    $ranks = new Config($this->getDataFolder() . "/messages.yml", Config::YAML);
             $messages = [
       	    	$ranks->setNested("player-message", true), //if true send player a message
@@ -110,8 +111,9 @@ class RankUp extends PluginBase implements Listener {
       	    	$ranks->setNested("no-money", "Not enough money to rank up"),
       	    	$ranks->setNested("rankup", "You ranked up to rank")
       	    ];
-      	    $ranks->save();
-	      
+      	    $ranks->save(); 
+	    }
+	    
 	    $data = new RankStore($this);
 	    $this->ranks = $data->getRanks();
 	    $this->prices = $data->getRankPrices();
@@ -126,7 +128,13 @@ class RankUp extends PluginBase implements Listener {
 	    $this->getServer()->getPluginManager()->registerEvents(new RankUpCommand($this), $this);
 	    $this->getServer()->getPluginManager()->registerEvents(new RankStore($this), $this);
 	    
-	    $this->saveResource("/ranks.yml");
+            if(!file_exists($this->getDataFolder() . "/ranks.yml")) {
+      	       $config = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
+	       $this->getLogger()->error("Ranks folder is missing");
+	       $this->getServer()->getPluginManager()->disablePlugin($this);
+	    }else{
+	       $config->save();
+	       $this->saveResource("/ranks.yml");
       }
 	
       public function onJoin(PlayerJoinEvent $event) {
