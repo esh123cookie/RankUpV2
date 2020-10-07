@@ -22,7 +22,16 @@ class RankStore {
 	
     public function getPlugin(){
 	return $this->plugin;
-    } 
+    }
+	
+    public function get_next_key_array($array, $key){
+    	$keys = array_keys($array);
+    	$position = array_search($key, $keys);
+    	if (isset($keys[$position + 1])) {
+            $nextKey = $keys[$position + 1];
+	}
+    return $nextKey; //$this->get_next_key_array((array ($arr), (int) ($num) - 1));
+    }
 	
     public function getRankCount(): int { 
 	    return count($this->ranks);
