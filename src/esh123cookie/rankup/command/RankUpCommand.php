@@ -43,7 +43,7 @@ class RankUpCommand implements Listener{
     }
 	
     public function getStore() { 
-	$this->store = new RankStore();
+	$this->store = new RankStore($this->plugin);
 	return $this->store;
     }
 	
