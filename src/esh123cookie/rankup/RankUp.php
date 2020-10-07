@@ -133,7 +133,6 @@ class RankUp extends PluginBase implements Listener {
 	       $this->getLogger()->error("Ranks folder is missing");
 	       $this->getServer()->getPluginManager()->disablePlugin($this);
 	    }else{
-	       $config->save();
 	       $this->saveResource("/ranks.yml");
 	    }
       }
