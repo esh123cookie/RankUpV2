@@ -128,12 +128,12 @@ class RankUp extends PluginBase implements Listener {
 	    $this->getServer()->getPluginManager()->registerEvents(new RankUpCommand($this), $this);
 	    $this->getServer()->getPluginManager()->registerEvents(new RankStore($this), $this);
 	    
+            $this->saveDefaultConfig();
+	    
             if(!file_exists($this->getDataFolder() . "/ranks.yml")) {
       	       $config = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
 	       $this->getLogger()->error("Ranks folder is missing");
 	       $this->getServer()->getPluginManager()->disablePlugin($this);
-	    }else{
-	       $this->saveResource("/ranks.yml");
 	    }
       }
 	
