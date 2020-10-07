@@ -112,7 +112,7 @@ class RankUp extends PluginBase implements Listener {
       	    ];
       	    $ranks->save();
 	      
-	    $data = new RankStore();
+	    $data = new RankStore($this);
 	    $this->ranks = $data->getRanks();
 	    $this->prices = $data->getRankPrices();
 	    foreach($this->ranks as $rank) { 
