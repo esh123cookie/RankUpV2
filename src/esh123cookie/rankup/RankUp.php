@@ -71,7 +71,6 @@ use pocketmine\scheduler\ClosureTask;
 use pocketmine\scheduler\Task;
 use pocketmine\scheduler\TaskScheduler;
 
-use esh123cookie\rankup\task\RankupCheck;
 use esh123cookie\rankup\store\RankStore; 
 
 class RankUp extends PluginBase implements Listener {
@@ -122,8 +121,6 @@ class RankUp extends PluginBase implements Listener {
 	      
 	    //could be done using command map (gonna check if its more effective) atm this is better
 	    $this->getServer()->getPluginManager()->registerEvents(new Commands($this), $this);
-	      
-	    //$this->getScheduler()->scheduleRepeatingTask(new RankupCheck($this), 1); prolly finna be removed
       }
 	
       public function onJoin(PlayerJoinEvent $event) {
