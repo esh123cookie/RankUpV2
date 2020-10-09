@@ -143,7 +143,7 @@ class RankUp extends PluginBase implements Listener {
 		if($event->getPlayer()->hasPlayedBefore() == false) {
 		   $rank = new Config($this->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 		   $data = new RankStore($this);
-		   $rank->set("rank", $data->getFirstRankString());
+		   $rank->set("rank", $data->getFirstRankInt());
 		   $rank->save();
 		}
       }
