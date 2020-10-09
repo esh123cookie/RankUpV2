@@ -84,9 +84,9 @@ class RankUp extends PluginBase implements Listener {
 	
     public $config;
 	
-    public $ranks;
+    private $ranks;
 	
-    public $prices;
+    private $prices;
 	
     private $nextrank;
 	
@@ -122,17 +122,6 @@ class RankUp extends PluginBase implements Listener {
       	    	$rank->setNested("price", 50)
       	    ];
       	    $rank->save(); 
-	    }
-	    
-	    $data = new RankStore($this);
-	    $this->ranks = $data->getRanks();
-	    $this->prices = $data->getRankPrices();
-	    foreach($this->ranks as $rank) { 
-	    	    foreach($this->prices as $price) {
-	    		    foreach ($this->getServer()->getOnlinePlayers() as $player){
-	    	     		     $this->nextrank = $this->getNextRank($player, $this->getConfig()->get("nextrank"));
-			    }
-		    }
 	    }
 	    
 	    $this->getServer()->getPluginManager()->registerEvents(new RankUpCommand($this), $this);
