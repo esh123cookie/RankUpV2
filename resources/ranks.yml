@@ -6,9 +6,11 @@
 # Simple rankup plugin 
 
 # ranks 
+# commands will come soon
+# xp support will come soon
 
-rank: "A"
-  price: "50"
-  commands:
-          - #soon
-#commands next
+# dont mess with player configs
+# you can add as many ranks in the ranks folder as you like
+# prices need to be added for each rank or the plugin will crash
+
+
