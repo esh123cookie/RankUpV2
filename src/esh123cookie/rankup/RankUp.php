@@ -94,7 +94,6 @@ class RankUp extends PluginBase implements Listener {
   
     public function onEnable(){
         self::$instance = $this;
-        $this->saveDefaultConfig();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
 	      
@@ -114,6 +113,15 @@ class RankUp extends PluginBase implements Listener {
       	    	$ranks->setNested("rankup", "You ranked up to rank")
       	    ];
       	    $ranks->save(); 
+	    }
+	    
+            if(!file_exists($this->getDataFolder() . "/ranks.yml")) {
+      	    $rank = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
+            $config = [
+      	    	$rank->setNested("rank", "A"), //if true send player a message
+      	    	$rank->setNested("price", 50)
+      	    ];
+      	    $rank->save(); 
 	    }
 	    
 	    $data = new RankStore($this);
