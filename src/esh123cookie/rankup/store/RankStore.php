@@ -13,9 +13,9 @@ class RankStore implements Listener{
 	
     private $plugin;
 	
-    public $prices;
+    private $prices;
 
-    public $ranks;
+    private $ranks;
 
     public function __construct(RankUp $plugin) {
         $this->plugin = $plugin;
