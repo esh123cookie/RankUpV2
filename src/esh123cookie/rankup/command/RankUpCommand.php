@@ -74,7 +74,7 @@ class RankUpCommand implements Listener{
 	    $config = new Config($this->plugin->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 	    $first = array_key_first($this->getStore()->getRankCount());
 	    $last = array_key_last($this->getStore()->getRankCount());
-	    $rank = $this->getRank($player);
+	    $rank = $this->plugin->getRank($player);
 	    if($rank >= $last) { 
       	       $messages = new Config($this->getDataFolder() . "/messages.yml", Config::YAML);
 	       $this->message($player, $messages->get("max-rank"));
@@ -116,4 +116,24 @@ class RankUpCommand implements Listener{
     public function setRank(Player $player, $rank) {
     	 return $this->getServer()->getPluginManager()->getPlugin("PureChat")->setPrefix($rank, $player);
     }
+	
+    public function getCurrentRank(): string {
+	       $key = $this->plugin->getRank($player);
+       	       return $this->getStore()->get_next_key_array($this->getStore()->getRanks(), [$key]);
+    }
+	
+    public function getCurrentRankPrice(): string {
+	       $key = $this->plugin->getRank($player);
+       	       return $this->getStore()->get_next_key_array($this->getStore()->getRankPrices(), [$key]);
+    }   
+	
+    public function getNextRank() {
+	       $key = ($this->plugin->getRank($player) + 1);
+       	       $nextRank = $this->getStore()->get_next_key_array($this->getStore()->getRanks(), [$key]);
+    }
+	
+    public function getNextRankPrice() {
+	       $key = ($this->plugin->getRank($player) + 1);
+       	       $nextRank = $this->getStore()->get_next_key_array($this->getStore()->getRankPrices(), [$key]);
+    }   
 }
