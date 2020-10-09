@@ -137,11 +137,11 @@ class RankUp extends PluginBase implements Listener {
       public function onJoin(PlayerJoinEvent $event) {
         $player = $event->getPlayer();
 	if(!$this->userExists($player)){
-	    $this->getLogger()->info("Creating new RankUp profile for " . strtolower($player->getName));
+	    $this->getLogger()->info("Creating new RankUp profile for " . strtolower($player->getName()));
 	    $this->registerUser($player);
 		}
 		if($event->getPlayer()->hasPlayedBefore() == false) {
-		   $rank = new Config($this->playerFolder . strtolower($player->getName) . ".yml", Config::YAML);
+		   $rank = new Config($this->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 		   $data = new RankStore($this);
 		   $rank->set("rank", $data->getFirstRankString());
 		   $rank->save();
@@ -184,17 +184,17 @@ class RankUp extends PluginBase implements Listener {
       }
 	
       public function userExists(Player $player): bool{
-		$config = new Config($this->playerFolder . strtolower($player->getName) . ".yml", Config::YAML);
+		$config = new Config($this->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 		return (($config->exists("rank")) && ($config->exists("nextrank"))) ? true : false;
       }
 	
       public function getNextRank(Player $player) {
-		$config = new Config($this->playerFolder . strtolower($player->getName) . ".yml", Config::YAML);
+		$config = new Config($this->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 		return $config->get("nextrank");
       }
 	      
       public function getRank(Player $player) {
-		$config = new Config($this->playerFolder . strtolower($player->getName) . ".yml", Config::YAML);
+		$config = new Config($this->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 		return $config->get("rank");
       }
 }
