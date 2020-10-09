@@ -38,7 +38,7 @@ class RankUpCommand implements Listener{
 
     private $plugin;
 	
-    private $store
+    private $store;
 
     public function __construct(RankUp $plugin) {
         $this->plugin = $plugin;
