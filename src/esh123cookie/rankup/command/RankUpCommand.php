@@ -53,18 +53,19 @@ class RankUpCommand implements Listener{
 	return $this->plugin;
     }
    
-    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
     {
-      	   $rank = $this->getRank($sender, $this->getConfig()->get("rank"));
-	   if($cmd->getName() == "rankup") {
+	   $config = new Config($this->plugin->playerFolder . strtolower($sender->getName()) . ".yml", Config::YAML);
+      	   $rank = $this->getRank($sender, $config->get("rank"));
+	   if($command->getName() == "rankup") {
 	      if ($sender instanceof Player) {
-		  $this->rankUp($player);
+		  $this->rankUp($sender);
               }
               return true;
 	   }
-	   if($cmd->getName() == "ru") {
+	   if($command->getName() == "ru") {
 	      if ($sender instanceof Player) {
-		  $this->rankUp($player);
+		  $this->rankUp($sender);
               }
               return true;
 	   }
@@ -75,8 +76,8 @@ class RankUpCommand implements Listener{
 	    $first = array_key_first($this->getStore()->getRankCount());
 	    $last = array_key_last($this->getStore()->getRankCount());
 	    $rank = $this->plugin->getRank($player);
+      	    $messages = new Config($this->plugin->getDataFolder() . "/messages.yml", Config::YAML);
 	    if($rank >= $last) { 
-      	       $messages = new Config($this->getDataFolder() . "/messages.yml", Config::YAML);
 	       $this->message($player, $messages->get("max-rank"));
 	    }else{
 	       $key = ($rank + 1);
@@ -105,34 +106,36 @@ class RankUpCommand implements Listener{
     public function setRankInt(Player $player, int $key) { 
 	$config = new Config($this->plugin->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 	return $config->set("rank", $key);
+	$config->save();
     }
 	
     public function setNextRankInt(Player $player, int $key) { 
 	$config = new Config($this->plugin->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 	$math = ($key + 1);
 	return $config->set("nextrank", $math);
+	$config->save();
     }
 	    
     public function setRank(Player $player, $rank) {
     	 return $this->getServer()->getPluginManager()->getPlugin("PureChat")->setPrefix($rank, $player);
     }
 	
-    public function getCurrentRank(): string {
+    public function getCurrentRank(Player $player): string {
 	       $key = $this->plugin->getRank($player);
        	       return $this->getStore()->get_next_key_array($this->getStore()->getRanks(), [$key]);
     }
 	
-    public function getCurrentRankPrice(): string {
+    public function getCurrentRankPrice(Player $player): string {
 	       $key = $this->plugin->getRank($player);
        	       return $this->getStore()->get_next_key_array($this->getStore()->getRankPrices(), [$key]);
     }   
 	
-    public function getNextRank() {
+    public function getNextRank(Player $player) {
 	       $key = ($this->plugin->getRank($player) + 1);
        	       $nextRank = $this->getStore()->get_next_key_array($this->getStore()->getRanks(), [$key]);
     }
 	
-    public function getNextRankPrice() {
+    public function getNextRankPrice(Player $player) {
 	       $key = ($this->plugin->getRank($player) + 1);
        	       $nextRank = $this->getStore()->get_next_key_array($this->getStore()->getRankPrices(), [$key]);
     }   
