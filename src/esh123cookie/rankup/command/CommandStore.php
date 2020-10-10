@@ -53,6 +53,14 @@ class CommandStore implements Listener{
 	return $this->plugin;
     }
 	
+    public function about(Player $player): string {
+	    return $this->message($player, "§7(§a!§7) §aThis plugin was made by §7[§cesh123unicorn§7, §cesh123cookie§7]");
+    }
+	
+    public function myRank(Player $player): string {
+	    return $this->getCurrentRank($player);
+    }
+    	    
     public function rankUp(Player $player) {
 	    $config = new Config($this->plugin->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 	    $first = array_key_first($this->getStore()->getRankCount());
@@ -79,6 +87,10 @@ class CommandStore implements Listener{
 	    
     public function message(Player $player, string $message) {
 	    return $player->sendMessage($message);
+    }	
+	    
+    public function space(): string {
+	    return "\n";
     }	
 	    
     public function worldMessage(string $message) {
