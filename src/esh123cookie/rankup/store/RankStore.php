@@ -35,7 +35,7 @@ class RankStore implements Listener{
     }
 	
     public function getRankCount(): int { 
-	    return count($this->ranks);
+	    return count($this->getRanks());
     }
 	
     public function getFirstRankInt(): int { 
