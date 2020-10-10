@@ -34,7 +34,7 @@ use onebone\economyapi\EconomyAPI;
 
 use pocketmine\utils\Config;
 
-class RankUpCommand implements Listener{
+class CommandStore implements Listener{
 
     private $plugin;
 	
@@ -52,25 +52,15 @@ class RankUpCommand implements Listener{
     public function getPlugin(){
 	return $this->plugin;
     }
-   
-    public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
-    {
-	   $config = new Config($this->plugin->playerFolder . strtolower($sender->getName()) . ".yml", Config::YAML);
-      	   $rank = $this->getRank($sender, $config->get("rank"));
-	   if($command->getName() == "rankup") {
-	      if ($sender instanceof Player) {
-		  $this->rankUp($sender);
-              }
-              return true;
-	   }
-	   if($command->getName() == "ru") {
-	      if ($sender instanceof Player) {
-		  $this->rankUp($sender);
-              }
-              return true;
-	   }
+	
+    public function about(Player $player): string {
+	    return $this->message($player, "§7(§a!§7) §aThis plugin was made by §7[§cesh123unicorn§7, §cesh123cookie§7]");
     }
 	
+    public function myRank(Player $player): string {
+	    return $this->getCurrentRank($player);
+    }
+    	    
     public function rankUp(Player $player) {
 	    $config = new Config($this->plugin->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
 	    $first = array_key_first($this->getStore()->getRankCount());
@@ -97,6 +87,10 @@ class RankUpCommand implements Listener{
 	    
     public function message(Player $player, string $message) {
 	    return $player->sendMessage($message);
+    }	
+	    
+    public function space(): string {
+	    return "\n";
     }	
 	    
     public function worldMessage(string $message) {

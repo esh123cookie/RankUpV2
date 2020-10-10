@@ -26,6 +26,11 @@ namespace esh123cookie\rankup;
  *
  */
 
+use esh123cookie\rankup\command\CommandRankUp;
+use esh123cookie\rankup\command\CommandRu;
+use esh123cookie\rankup\command\CommandRankAbout;
+use esh123cookie\rankup\command\CommandMyRank;
+
 use pocketmine\entity\Effect;
 use pocketmine\entity\EffectInstance;
 use pocketmine\plugin\PluginBase;
@@ -72,7 +77,7 @@ use pocketmine\scheduler\Task;
 use pocketmine\scheduler\TaskScheduler;
 
 use esh123cookie\rankup\store\RankStore; 
-use esh123cookie\rankup\command\RankUpCommand;
+use esh123cookie\rankup\command\CommandStore;
 
 class RankUp extends PluginBase implements Listener {
   
@@ -124,8 +129,14 @@ class RankUp extends PluginBase implements Listener {
       	    $rank->save(); 
 	    }
 	    
-	    $this->getServer()->getPluginManager()->registerEvents(new RankUpCommand($this), $this);
+	    $this->getServer()->getPluginManager()->registerEvents(new CommandStore($this), $this);
 	    $this->getServer()->getPluginManager()->registerEvents(new RankStore($this), $this);
+	    
+            $commandMap = $this->getServer()->getCommandMap();
+            $commandMap->register("rankup", new CommandRankUp("rankup", $this));
+            $commandMap->register("rankup", new CommandRu("ru", $this)); 
+            $commandMap->register("rankup", new CommandRankAbout("rankabout", $this)); 
+            $commandMap->register("rankup", new CommandMyRank("myrank", $this)); 
 	    
             if(!file_exists($this->getDataFolder() . "/ranks.yml")) {
       	       $config = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
