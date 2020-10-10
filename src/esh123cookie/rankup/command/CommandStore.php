@@ -34,7 +34,7 @@ use onebone\economyapi\EconomyAPI;
 
 use pocketmine\utils\Config;
 
-class RankUpCommand implements Listener{
+class CommandStore implements Listener{
 
     private $plugin;
 	
@@ -51,24 +51,6 @@ class RankUpCommand implements Listener{
 	
     public function getPlugin(){
 	return $this->plugin;
-    }
-   
-    public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
-    {
-	   $config = new Config($this->plugin->playerFolder . strtolower($sender->getName()) . ".yml", Config::YAML);
-      	   $rank = $this->getRank($sender, $config->get("rank"));
-	   if($command->getName() == "rankup") {
-	      if ($sender instanceof Player) {
-		  $this->rankUp($sender);
-              }
-              return true;
-	   }
-	   if($command->getName() == "ru") {
-	      if ($sender instanceof Player) {
-		  $this->rankUp($sender);
-              }
-              return true;
-	   }
     }
 	
     public function rankUp(Player $player) {
