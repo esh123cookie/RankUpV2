@@ -77,7 +77,7 @@ use pocketmine\scheduler\Task;
 use pocketmine\scheduler\TaskScheduler;
 
 use esh123cookie\rankup\store\RankStore; 
-use esh123cookie\rankup\command\RankUpCommand;
+use esh123cookie\rankup\command\CommandStore;
 
 class RankUp extends PluginBase implements Listener {
   
