@@ -63,11 +63,10 @@ class CommandStore implements Listener{
     	    
     public function rankUp(Player $player) {
 	    $config = new Config($this->plugin->playerFolder . strtolower($player->getName()) . ".yml", Config::YAML);
-	    $first = array_key_first($this->getStore()->getRankCount());
-	    $last = array_key_last($this->getStore()->getRankCount());
+	    $int = $this->getStore()->getRankCount();
 	    $rank = $this->plugin->getRank($player);
       	    $messages = new Config($this->plugin->getDataFolder() . "/messages.yml", Config::YAML);
-	    if($rank >= $last) { 
+	    if($rank >= $int) { 
 	       $this->message($player, $messages->get("max-rank"));
 	    }else{
 	       $key = ($rank + 1);
