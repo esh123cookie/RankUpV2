@@ -129,7 +129,7 @@ class RankUp extends PluginBase implements Listener {
       	    $rank->save(); 
 	    }
 	    
-	    $this->getServer()->getPluginManager()->registerEvents(new RankUpCommand($this), $this);
+	    $this->getServer()->getPluginManager()->registerEvents(new CommandStore($this), $this);
 	    $this->getServer()->getPluginManager()->registerEvents(new RankStore($this), $this);
 	    
             $commandMap = $this->getServer()->getCommandMap();
