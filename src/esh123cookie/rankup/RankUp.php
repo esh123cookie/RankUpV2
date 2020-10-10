@@ -101,8 +101,6 @@ class RankUp extends PluginBase implements Listener {
         self::$instance = $this;
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info("§cRankupV2 is enabled");
-	$data = new RankStore($this);
-        $this->getLogger()->info("§cRanks Loaded§7: §c" . $data->getRankCount());
 	      
             if(!file_exists($this->playerFolder)) {
                 $this->playerFolder = $this->getDataFolder() . "Players/";
@@ -160,6 +158,9 @@ class RankUp extends PluginBase implements Listener {
 	       $this->getLogger()->error("Ranks folder is missing");
 	       $this->getServer()->getPluginManager()->disablePlugin($this);
 	    }
+	    
+	    $data = new RankStore($this);
+            $this->getLogger()->info("§cRanks Loaded§7: §c" . $data->getRankCount());
       }
 	
       public function onJoin(PlayerJoinEvent $event) {
