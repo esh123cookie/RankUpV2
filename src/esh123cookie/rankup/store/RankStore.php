@@ -39,23 +39,15 @@ class RankStore implements Listener{
     }
 	
     public function getFirstRankInt(): int { 
-	    return (int) array_key_first($this->ranks);
+	    return (int) get_next_key_array($this->ranks, 0);
     }
 	
     public function getFirstPrice(): int { 
-	    return (int) array_key_first($this->prices);
-    }
-	
-    public function getLastRankInt(): int { 
-	    return (int) array_key_last($this->ranks);
-    }
-	
-    public function getLastPrice(): int { 
-	    return (int) array_key_last($this->prices);
+	    return (int) get_next_key_array($this->prices, 0);
     }
 	
     public function getRankPrices(): array { 
-      	    $prices = new Config($this->plugin->getDataFolder() . "/ranks.yml", Config::YAML);
+      	    $prices = new Config($this->plugin->getDataFolder() . "/prices.yml", Config::YAML);
             $this->prices = $prices->getAll()["price"];
             return $this->prices;
     }
