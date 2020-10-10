@@ -100,7 +100,9 @@ class RankUp extends PluginBase implements Listener {
     public function onEnable(){
         self::$instance = $this;
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info("§cRankup plugin made by esh123cookie hs been enabled");
+        $this->getLogger()->info("§cRankupV2 is enabled");
+	$data = new RankStore($this);
+        $this->getLogger()->info("§cRanks Loaded§7: §c" . $data->getRankCount());
 	      
             if(!file_exists($this->playerFolder)) {
                 $this->playerFolder = $this->getDataFolder() . "Players/";
@@ -123,10 +125,25 @@ class RankUp extends PluginBase implements Listener {
             if(!file_exists($this->getDataFolder() . "/ranks.yml")) {
       	    $rank = new Config($this->getDataFolder() . "/ranks.yml", Config::YAML);
             $config = [
-      	    	$rank->setNested("rank", "A"), //if true send player a message
-      	    	$rank->setNested("price", 50)
+      	    	$rank->setNested("rank", " "), //if true send player a message
+      	    	$rank->setNested("A", " "), //if true send player a message
+      	    	$rank->setNested("B", " "), //if true send player a message
+      	    	$rank->setNested("C", " "), //if true send player a message
+      	    	$rank->setNested("D", " ")
       	    ];
       	    $rank->save(); 
+	    }
+	    
+            if(!file_exists($this->getDataFolder() . "/price.yml")) {
+      	    $price = new Config($this->getDataFolder() . "/price.yml", Config::YAML);
+            $p = [
+      	    	$price->setNested("rank", " "), //if true send player a message
+      	    	$price->setNested("A", " "), //if true send player a message
+      	    	$price->setNested("B", " "), //if true send player a message
+      	    	$price->setNested("C", " "), //if true send player a message
+      	    	$price->setNested("D", " ")
+      	    ];
+      	    $price->save(); 
 	    }
 	    
 	    $this->getServer()->getPluginManager()->registerEvents(new CommandStore($this), $this);
