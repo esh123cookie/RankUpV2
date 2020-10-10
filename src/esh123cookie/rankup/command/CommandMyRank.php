@@ -15,7 +15,7 @@ use pocketmine\entity\Effect;
 use pocketmine\entity\EffectInstance;
 use pocketmine\level\sound\PopSound;
 
-class CommandRankAbout extends PluginCommand{
+class CommandMyRank extends PluginCommand{
 
     private $owner;
 
